@@ -66,7 +66,7 @@ export default function MarketingPage() {
             </p>
 
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3.5">
-              <Link href="/onboarding">
+              <Link href="/signup">
                 <Button variant="primary" size="lg" rightIcon={<ArrowRight className="w-4 h-4" />}>
                   Create An Account
                 </Button>

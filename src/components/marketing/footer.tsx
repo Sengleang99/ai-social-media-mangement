@@ -59,7 +59,7 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/onboarding" className="hover:text-emerald-600 transition-colors flex items-center gap-1">
+                <Link href="/signup" className="hover:text-emerald-600 transition-colors flex items-center gap-1">
                   <span>Get Started</span>
                   <span className="text-[10px] px-1.5 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 font-semibold">Free</span>
                 </Link>

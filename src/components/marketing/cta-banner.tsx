@@ -25,14 +25,14 @@ export function CtaBanner() {
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
-            <Link href="/onboarding">
+            <Link href="/signup">
               <Button
                 variant="secondary"
                 size="lg"
                 className="bg-white hover:bg-zinc-100 text-emerald-900 border-white shadow-lg shadow-black/10 font-bold"
                 rightIcon={<ArrowRight className="w-4 h-4 text-emerald-700" />}
               >
-                Start Free Onboarding
+                Start Free 14-Day Trial
               </Button>
             </Link>
             <Link href="/dashboard">

@@ -40,3 +40,23 @@ body {
 .animate-fadeIn {
   animation: fadeIn 0.35s ease-out forwards;
 }
+
+@keyframes loadingBar {
+  0% {
+    left: -40%;
+    width: 30%;
+  }
+  50% {
+    left: 30%;
+    width: 60%;
+  }
+  100% {
+    left: 100%;
+    width: 30%;
+  }
+}
+
+.animate-loadingBar {
+  animation: loadingBar 1.5s ease-in-out infinite;
+}
+
