@@ -73,7 +73,7 @@ export default function MarketingPage() {
               </Link>
               <Link href="/dashboard">
                 <Button variant="secondary" size="lg">
-                  Dashboard
+                  Learn More
                 </Button>
               </Link>
             </div>

@@ -11,9 +11,9 @@ import { cn } from "@/lib/utils";
 const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "Pricing", href: "/pricing" },
-  { label: "AI Tools", href: "/#ai-tools" },
-  { label: "Blog", href: "/#blog" },
-  { label: "Affiliates", href: "/#affiliates" },
+  { label: "AI Tools", href: "/ai-tools" },
+  { label: "Blog", href: "/blog" },
+  // { label: "Affiliates", href: "/#affiliates" },
 ];
 
 export function Navbar() {

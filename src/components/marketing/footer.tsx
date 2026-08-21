@@ -74,7 +74,7 @@ export function Footer() {
             </h4>
             <ul className="space-y-2 text-xs sm:text-sm">
               <li>
-                <Link href="/#blog" className="hover:text-emerald-600 transition-colors">
+                <Link href="/blog" className="hover:text-emerald-600 transition-colors">
                   Growth Blog
                 </Link>
               </li>
