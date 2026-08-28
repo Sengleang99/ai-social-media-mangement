@@ -4,22 +4,15 @@ import * as React from "react";
 import Link from "next/link";
 import { 
   Search, 
-  Sparkles, 
   ArrowRight, 
   Clock, 
-  Calendar, 
-  User, 
-  TrendingUp, 
   Flame, 
   BookOpen, 
   CheckCircle2, 
-  Mail, 
-  Tag
+  Mail
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { CtaBanner } from "@/components/marketing/cta-banner";
-import { PlatformIcon } from "@/components/ui/social-icons";
 import { cn } from "@/lib/utils";
 
 interface BlogPost {

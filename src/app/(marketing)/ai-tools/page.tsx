@@ -15,15 +15,10 @@ import {
   Database, 
   ShieldCheck, 
   Layers, 
-  TrendingUp, 
-  FileText, 
-  MessageSquare,
   Flame,
-  CheckCircle2,
   RefreshCw
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { PlatformIcon } from "@/components/ui/social-icons";
 import { CtaBanner } from "@/components/marketing/cta-banner";
 import { cn } from "@/lib/utils";
@@ -356,14 +351,15 @@ export default function AiToolsPage() {
 
               {/* Bottom Actions */}
               <div className="pt-4 mt-4 border-t border-zinc-200/60 dark:border-zinc-800 flex items-center justify-between gap-3">
-                <button
+                <Button
                   type="button"
+                  variant="secondary"
+                  size="sm"
                   onClick={handleCopy}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-xs font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-700 cursor-pointer shadow-xs transition-colors"
+                  leftIcon={copied ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
                 >
-                  {copied ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
-                  <span>{copied ? "Copied!" : "Copy Post"}</span>
-                </button>
+                  {copied ? "Copied!" : "Copy Post"}
+                </Button>
 
                 <Link href="/signup">
                   <Button variant="primary" size="sm" rightIcon={<ArrowRight className="w-3.5 h-3.5" />}>

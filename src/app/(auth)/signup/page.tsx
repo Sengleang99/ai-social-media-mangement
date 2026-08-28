@@ -11,9 +11,7 @@ import {
   EyeOff, 
   ArrowRight, 
   Check, 
-  AlertCircle,
-  ShieldCheck,
-  Sparkles
+  AlertCircle
 } from "lucide-react";
 import { AuthShell } from "@/components/auth/auth-shell";
 import { GoogleButton } from "@/components/auth/google-button";

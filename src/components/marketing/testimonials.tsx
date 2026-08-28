@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Star, TrendingUp, Sparkles, Quote } from "lucide-react";
+import { Star, TrendingUp } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 interface Testimonial {
@@ -86,7 +86,7 @@ export function TestimonialsSection() {
 
                 {/* Quote */}
                 <p className="text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed italic">
-                  "{t.quote}"
+                  &ldquo;{t.quote}&rdquo;
                 </p>
               </div>
 

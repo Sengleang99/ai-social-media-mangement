@@ -6,7 +6,6 @@ import {
   Mail, 
   ArrowLeft, 
   ArrowRight, 
-  CheckCircle2, 
   AlertCircle, 
   RefreshCw, 
   ExternalLink 

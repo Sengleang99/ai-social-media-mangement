@@ -4,44 +4,23 @@ import * as React from "react";
 import Link from "next/link";
 import {
   Sparkles,
-  TrendingUp,
   Calendar,
-  Users,
-  Eye,
-  ArrowUpRight,
   Clock,
-  MoreVertical,
-  Plus,
   Zap,
   CheckCircle2,
-  Share2,
   RefreshCw,
-  SlidersHorizontal,
   Flame,
   Lightbulb,
   ChevronRight,
-  Clock3,
   Bot,
-  Store,
-  MessageSquare,
-  ThumbsUp,
-  DollarSign,
-  Target,
-  ShoppingBag,
   Check,
-  Building,
-  Wand2,
-  FileText,
   Copy,
   BarChart3,
-  Layers,
-  ArrowRight,
-  Sparkle,
   History,
-  TrendingDown,
 } from "lucide-react";
 import { PlatformIcon } from "@/components/ui/social-icons";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 export default function DashboardPage() {
   const [promoPrompt, setPromoPrompt] = React.useState("");
@@ -435,27 +414,20 @@ export default function DashboardPage() {
                         >
                           Customize
                         </Link>
-                        <button
+                        <Button
+                          variant={isApproved ? "secondary" : "primary"}
+                          size="sm"
                           onClick={() => handleApprove(post.id)}
-                          className={cn(
-                            "px-4 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 shadow-xs",
-                            isApproved
-                              ? "bg-emerald-600 text-white"
-                              : "bg-emerald-500 hover:bg-emerald-600 text-white"
-                          )}
-                        >
-                          {isApproved ? (
-                            <>
-                              <Check className="w-3.5 h-3.5" />
-                              <span>Scheduled for Autopilot</span>
-                            </>
-                          ) : (
-                            <>
+                          leftIcon={
+                            isApproved ? (
+                              <Check className="w-3.5 h-3.5 text-emerald-500" />
+                            ) : (
                               <CheckCircle2 className="w-3.5 h-3.5" />
-                              <span>1-Click Approve & Schedule</span>
-                            </>
-                          )}
-                        </button>
+                            )
+                          }
+                        >
+                          {isApproved ? "Scheduled for Autopilot" : "1-Click Approve & Schedule"}
+                        </Button>
                       </div>
                     </div>
                   </div>

@@ -7,18 +7,9 @@ import {
   X as CrossIcon,
   Sparkles,
   ArrowRight,
-  ShieldCheck,
-  Zap,
-  HelpCircle,
-  Star,
-  ChevronDown,
-  TrendingUp,
-  Sliders,
-  Users,
-  Clock
+  ShieldCheck
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import { CtaBanner } from "@/components/marketing/cta-banner";
 import { TestimonialsSection } from "@/components/marketing/testimonials";

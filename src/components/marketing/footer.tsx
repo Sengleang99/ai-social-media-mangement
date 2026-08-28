@@ -1,7 +1,6 @@
 import * as React from "react";
 import Link from "next/link";
 import { SocialHubLogo, PlatformIcon } from "@/components/ui/social-icons";
-import { Sparkles, Shield, Heart } from "lucide-react";
 
 export function Footer() {
   return (

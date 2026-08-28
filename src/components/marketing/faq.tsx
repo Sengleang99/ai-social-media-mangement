@@ -59,7 +59,7 @@ export function FaqSection() {
             Frequently Asked Questions
           </h2>
           <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed">
-            Welcome to our Social Hub! We've compiled a list of frequently asked questions to help you navigate our platform and make the most of your experience.
+            Welcome to our Social Hub! We&apos;ve compiled a list of frequently asked questions to help you navigate our platform and make the most of your experience.
           </p>
         </div>
 

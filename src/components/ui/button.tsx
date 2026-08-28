@@ -5,14 +5,14 @@ import { cn } from "@/lib/utils";
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?:
-    | "primary"
-    | "secondary"
-    | "outline"
-    | "ghost"
-    | "glow"
-    | "destructive"
-    | "link"
-    | "social";
+  | "primary"
+  | "secondary"
+  | "outline"
+  | "ghost"
+  | "glow"
+  | "destructive"
+  | "link"
+  | "social";
   size?: "sm" | "md" | "lg" | "xl" | "icon";
   isLoading?: boolean;
   leftIcon?: React.ReactNode;

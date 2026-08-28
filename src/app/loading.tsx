@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Sparkles, Loader2 } from "lucide-react";
+import { Sparkles } from "lucide-react";
 
 export default function Loading() {
     return (

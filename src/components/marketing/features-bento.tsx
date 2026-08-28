@@ -1,17 +1,10 @@
-import * as React from "react";
 import { 
-  Sparkles, 
   Repeat, 
   Clock, 
-  Layers, 
   BarChart3, 
-  ShieldCheck, 
-  Zap, 
   CheckCircle,
-  TrendingUp,
   BrainCircuit
 } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
 
 export function FeaturesBento() {
   return (
@@ -42,7 +35,7 @@ export function FeaturesBento() {
                 Human Authenticity Engine (99.4% Index)
               </h3>
               <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                Our model specifically strips away cringe clichés ("Delve into", "In today's fast-paced world") and structures posts with real hooks, storytelling cadence, and actionable substance.
+                Our model specifically strips away cringe clichés (&ldquo;Delve into&rdquo;, &ldquo;In today&apos;s fast-paced world&rdquo;) and structures posts with real hooks, storytelling cadence, and actionable substance.
               </p>
             </div>
 

@@ -1,8 +1,4 @@
-"use client";
-
-import * as React from "react";
-import { Loader2 } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 interface GoogleButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   text?: string;
@@ -13,22 +9,16 @@ export function GoogleButton({
   text = "Continue with Google",
   isLoading = false,
   className,
-  disabled,
   ...props
 }: GoogleButtonProps) {
   return (
-    <button
+    <Button
       type="button"
-      disabled={disabled || isLoading}
-      className={cn(
-        "relative w-full h-11 px-4 flex items-center justify-center gap-3 rounded-xl border border-zinc-200 dark:border-zinc-700/80 bg-white dark:bg-zinc-800/80 hover:bg-zinc-50 dark:hover:bg-zinc-700/70 text-zinc-700 dark:text-zinc-200 text-sm font-medium shadow-xs transition-all duration-200 cursor-pointer active:scale-[0.99] disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2",
-        className
-      )}
-      {...props}
-    >
-      {isLoading ? (
-        <Loader2 className="w-4 h-4 animate-spin text-zinc-500" />
-      ) : (
+      variant="social"
+      size="md"
+      isFullWidth
+      isLoading={isLoading}
+      leftIcon={
         <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24">
           <path
             fill="#4285F4"
@@ -47,9 +37,12 @@ export function GoogleButton({
             d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"
           />
         </svg>
-      )}
-      <span>{text}</span>
-    </button>
+      }
+      className={className}
+      {...props}
+    >
+      {text}
+    </Button>
   );
 }
 export default GoogleButton;

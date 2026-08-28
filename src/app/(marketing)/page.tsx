@@ -1,12 +1,10 @@
 import Link from "next/link";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PlatformIcon } from "@/components/ui/social-icons";
 import { StatsBar } from "@/components/marketing/stats-bar";
 import { InteractiveDemo } from "@/components/marketing/interactive-demo";
-import { HowItWorksSection } from "@/components/marketing/how-it-works";
 import { PricingSection } from "@/components/marketing/pricing";
-import { TestimonialsSection } from "@/components/marketing/testimonials";
 import { FaqSection } from "@/components/marketing/faq";
 import { CtaBanner } from "@/components/marketing/cta-banner";
 import FeaturesBento from "@/components/marketing/features-bento";
