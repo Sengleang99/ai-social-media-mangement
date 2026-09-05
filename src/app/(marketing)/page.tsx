@@ -55,12 +55,17 @@ export default function MarketingPage() {
           <div className="relative z-10 max-w-2xl mx-auto px-2">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-zinc-900 dark:text-white tracking-tight leading-[1.15]">
               Scale Your Socials <br />
-              with <span className="relative inline-block underline decoration-emerald-500 decoration-4 underline-offset-8">Intelligent AI</span> <br />
+              with{" "}
+              <span className="relative inline-block underline decoration-emerald-500 decoration-4 underline-offset-8">
+                Intelligent AI
+              </span>{" "}
+              <br />
               on Full Autopilot
             </h1>
 
             <p className="mt-6 text-sm sm:text-base md:text-lg text-zinc-600 dark:text-zinc-400 max-w-xl mx-auto leading-relaxed">
-              Generate authentic viral posts, optimize peak-hour scheduling, and grow your audience effortlessly across Instagram, TikTok, X, Facebook, and YouTube.
+              Generate authentic viral posts, optimize peak-hour scheduling, and grow your audience
+              effortlessly across Instagram, TikTok, X, Facebook, and YouTube.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3.5">

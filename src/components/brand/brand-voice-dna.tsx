@@ -48,10 +48,7 @@ const ARCHETYPES: {
   },
 ];
 
-export function BrandVoiceDNASettings({
-  voiceDNA,
-  onChange,
-}: BrandVoiceDNAProps) {
+export function BrandVoiceDNASettings({ voiceDNA, onChange }: BrandVoiceDNAProps) {
   // Live sample copy calculated from active sliders
   const sampleCopy = React.useMemo(() => {
     if (voiceDNA.archetype === "warm_storyteller") {
@@ -78,7 +75,8 @@ export function BrandVoiceDNASettings({
             <span>AI Brand Voice & Persona DNA</span>
           </h3>
           <p className="text-xs text-zinc-500 dark:text-zinc-400">
-            Define your tone archetype, slang thresholds, and humor sliders for consistent omnichannel copy
+            Define your tone archetype, slang thresholds, and humor sliders for consistent
+            omnichannel copy
           </p>
         </div>
 
@@ -104,7 +102,7 @@ export function BrandVoiceDNASettings({
                   "p-3.5 rounded-2xl border transition-all cursor-pointer flex flex-col justify-between space-y-2",
                   isSelected
                     ? "border-purple-500 bg-purple-50/40 dark:bg-purple-950/25 ring-1 ring-purple-500/40 shadow-xs"
-                    : "border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-950/40 hover:border-zinc-300 dark:hover:border-zinc-700"
+                    : "border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-950/40 hover:border-zinc-300 dark:hover:border-zinc-700",
                 )}
               >
                 <div className="flex items-center justify-between">
@@ -117,9 +115,7 @@ export function BrandVoiceDNASettings({
                 </div>
 
                 <div>
-                  <h4 className="text-xs font-bold text-zinc-900 dark:text-white">
-                    {arch.label}
-                  </h4>
+                  <h4 className="text-xs font-bold text-zinc-900 dark:text-white">{arch.label}</h4>
                   <p className="text-[11px] text-zinc-500 dark:text-zinc-400 line-clamp-2 mt-0.5 leading-relaxed">
                     {arch.desc}
                   </p>
@@ -135,15 +131,13 @@ export function BrandVoiceDNASettings({
         {/* Formality Slider */}
         <div className="p-4 rounded-2xl bg-zinc-50 dark:bg-zinc-950/60 border border-zinc-200/80 dark:border-zinc-800 space-y-2">
           <div className="flex items-center justify-between text-xs">
-            <span className="font-bold text-zinc-800 dark:text-zinc-200">
-              Formality Spectrum
-            </span>
+            <span className="font-bold text-zinc-800 dark:text-zinc-200">Formality Spectrum</span>
             <span className="font-mono text-zinc-500">
               {voiceDNA.formality < 30
                 ? "Casual & Friendly"
                 : voiceDNA.formality < 70
-                ? "Balanced"
-                : "Formal"}
+                  ? "Balanced"
+                  : "Formal"}
             </span>
           </div>
           <input
@@ -151,9 +145,7 @@ export function BrandVoiceDNASettings({
             min={0}
             max={100}
             value={voiceDNA.formality}
-            onChange={(e) =>
-              onChange({ ...voiceDNA, formality: Number(e.target.value) })
-            }
+            onChange={(e) => onChange({ ...voiceDNA, formality: Number(e.target.value) })}
             className="w-full accent-purple-600 cursor-pointer"
           />
           <div className="flex justify-between text-[10px] text-zinc-400">
@@ -172,8 +164,8 @@ export function BrandVoiceDNASettings({
               {voiceDNA.emojiDensity < 30
                 ? "Minimal"
                 : voiceDNA.emojiDensity < 70
-                ? "Moderate (2-3)"
-                : "Vibrant (4+)"}
+                  ? "Moderate (2-3)"
+                  : "Vibrant (4+)"}
             </span>
           </div>
           <input
@@ -181,9 +173,7 @@ export function BrandVoiceDNASettings({
             min={0}
             max={100}
             value={voiceDNA.emojiDensity}
-            onChange={(e) =>
-              onChange({ ...voiceDNA, emojiDensity: Number(e.target.value) })
-            }
+            onChange={(e) => onChange({ ...voiceDNA, emojiDensity: Number(e.target.value) })}
             className="w-full accent-purple-600 cursor-pointer"
           />
           <div className="flex justify-between text-[10px] text-zinc-400">
@@ -207,9 +197,7 @@ export function BrandVoiceDNASettings({
             min={0}
             max={100}
             value={voiceDNA.depthLevel}
-            onChange={(e) =>
-              onChange({ ...voiceDNA, depthLevel: Number(e.target.value) })
-            }
+            onChange={(e) => onChange({ ...voiceDNA, depthLevel: Number(e.target.value) })}
             className="w-full accent-purple-600 cursor-pointer"
           />
           <div className="flex justify-between text-[10px] text-zinc-400">
@@ -221,9 +209,7 @@ export function BrandVoiceDNASettings({
         {/* Humor & Banter */}
         <div className="p-4 rounded-2xl bg-zinc-50 dark:bg-zinc-950/60 border border-zinc-200/80 dark:border-zinc-800 space-y-2">
           <div className="flex items-center justify-between text-xs">
-            <span className="font-bold text-zinc-800 dark:text-zinc-200">
-              Humor & Relatability
-            </span>
+            <span className="font-bold text-zinc-800 dark:text-zinc-200">Humor & Relatability</span>
             <span className="font-mono text-zinc-500">
               {voiceDNA.humorLevel < 30 ? "Direct & Informative" : "Witty & Relatable"}
             </span>
@@ -233,9 +219,7 @@ export function BrandVoiceDNASettings({
             min={0}
             max={100}
             value={voiceDNA.humorLevel}
-            onChange={(e) =>
-              onChange({ ...voiceDNA, humorLevel: Number(e.target.value) })
-            }
+            onChange={(e) => onChange({ ...voiceDNA, humorLevel: Number(e.target.value) })}
             className="w-full accent-purple-600 cursor-pointer"
           />
           <div className="flex justify-between text-[10px] text-zinc-400">

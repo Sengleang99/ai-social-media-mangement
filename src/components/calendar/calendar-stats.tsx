@@ -23,9 +23,7 @@ export function CalendarStats({ posts }: CalendarStatsProps) {
           <p className="text-xl font-bold text-zinc-900 dark:text-white leading-none">
             {scheduledCount}
           </p>
-          <p className="text-[11px] text-zinc-500 dark:text-zinc-400 mt-1">
-            Scheduled Posts
-          </p>
+          <p className="text-[11px] text-zinc-500 dark:text-zinc-400 mt-1">Scheduled Posts</p>
         </div>
       </div>
 
@@ -37,9 +35,7 @@ export function CalendarStats({ posts }: CalendarStatsProps) {
           <p className="text-xl font-bold text-zinc-900 dark:text-white leading-none">
             {publishedCount}
           </p>
-          <p className="text-[11px] text-zinc-500 dark:text-zinc-400 mt-1">
-            Published This Month
-          </p>
+          <p className="text-[11px] text-zinc-500 dark:text-zinc-400 mt-1">Published This Month</p>
         </div>
       </div>
 
@@ -51,9 +47,7 @@ export function CalendarStats({ posts }: CalendarStatsProps) {
           <p className="text-xl font-bold text-zinc-900 dark:text-white leading-none">
             {queuedCount}
           </p>
-          <p className="text-[11px] text-zinc-500 dark:text-zinc-400 mt-1">
-            AI Queue Slots
-          </p>
+          <p className="text-[11px] text-zinc-500 dark:text-zinc-400 mt-1">AI Queue Slots</p>
         </div>
       </div>
 
@@ -62,12 +56,8 @@ export function CalendarStats({ posts }: CalendarStatsProps) {
           <TrendingUp className="w-5 h-5" />
         </div>
         <div>
-          <p className="text-xl font-bold text-zinc-900 dark:text-white leading-none">
-            +38%
-          </p>
-          <p className="text-[11px] text-zinc-500 dark:text-zinc-400 mt-1">
-            Est. Reach Boost
-          </p>
+          <p className="text-xl font-bold text-zinc-900 dark:text-white leading-none">+38%</p>
+          <p className="text-[11px] text-zinc-500 dark:text-zinc-400 mt-1">Est. Reach Boost</p>
         </div>
       </div>
     </div>

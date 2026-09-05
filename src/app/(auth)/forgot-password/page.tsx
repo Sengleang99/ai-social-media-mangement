@@ -2,16 +2,10 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { 
-  Mail, 
-  ArrowLeft, 
-  ArrowRight, 
-  AlertCircle, 
-  RefreshCw, 
-  ExternalLink 
-} from "lucide-react";
+import { Mail, ArrowLeft, ArrowRight, AlertCircle, RefreshCw, ExternalLink } from "lucide-react";
 import { AuthShell } from "@/components/auth/auth-shell";
 import { Button } from "@/components/ui/button";
+import { createClient } from "@/lib/supabase/client";
 
 export default function ForgotPasswordPage() {
   const [email, setEmail] = React.useState("");
@@ -19,6 +13,8 @@ export default function ForgotPasswordPage() {
   const [isSubmitted, setIsSubmitted] = React.useState(false);
   const [error, setError] = React.useState<string | null>(null);
   const [resendCooldown, setResendCooldown] = React.useState(0);
+
+  const supabase = React.useMemo(() => createClient(), []);
 
   React.useEffect(() => {
     let timer: NodeJS.Timeout;
@@ -28,27 +24,47 @@ export default function ForgotPasswordPage() {
     return () => clearTimeout(timer);
   }, [resendCooldown]);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setError(null);
-
-    if (!email) {
+  const sendResetEmail = async (targetEmail: string) => {
+    const cleanEmail = targetEmail.trim();
+    if (!cleanEmail) {
       setError("Please enter your registered email address.");
       return;
     }
 
     setIsLoading(true);
-    setTimeout(() => {
+    setError(null);
+
+    try {
+      const callbackUrl = `${window.location.origin}/auth/callback?next=/settings`;
+      const { error: resetError } = await supabase.auth.resetPasswordForEmail(cleanEmail, {
+        redirectTo: callbackUrl,
+      });
+
+      if (resetError) {
+        setError(resetError.message);
+        setIsLoading(false);
+        return;
+      }
+
       setIsLoading(false);
       setIsSubmitted(true);
       setResendCooldown(60);
-    }, 1200);
+    } catch (err: unknown) {
+      const msg =
+        err instanceof Error ? err.message : "Failed to send reset link. Please try again.";
+      setError(msg);
+      setIsLoading(false);
+    }
   };
 
-  const handleResend = () => {
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    await sendResetEmail(email);
+  };
+
+  const handleResend = async () => {
     if (resendCooldown > 0) return;
-    setResendCooldown(60);
-    // Simulate resend notification
+    await sendResetEmail(email);
   };
 
   return (
@@ -83,6 +99,7 @@ export default function ForgotPasswordPage() {
               <input
                 type="email"
                 required
+                autoComplete="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="name@company.com"
@@ -130,7 +147,9 @@ export default function ForgotPasswordPage() {
               Password Reset Link Sent
             </h3>
             <p className="text-xs text-zinc-600 dark:text-zinc-400 max-w-sm mx-auto leading-relaxed">
-              If an account exists for <span className="font-semibold text-zinc-800 dark:text-zinc-200">{email}</span>, you will receive an email with reset instructions shortly.
+              If an account exists for{" "}
+              <span className="font-semibold text-zinc-800 dark:text-zinc-200">{email}</span>, you
+              will receive an email with reset instructions shortly.
             </p>
           </div>
 
@@ -149,7 +168,7 @@ export default function ForgotPasswordPage() {
             <button
               type="button"
               onClick={handleResend}
-              disabled={resendCooldown > 0}
+              disabled={resendCooldown > 0 || isLoading}
               className="w-full h-10 px-4 flex items-center justify-center gap-2 rounded-xl border border-zinc-200 dark:border-zinc-700/80 bg-white dark:bg-zinc-800/80 hover:bg-zinc-50 dark:hover:bg-zinc-700/70 text-zinc-700 dark:text-zinc-300 text-xs font-medium transition-all disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
             >
               <RefreshCw className={`w-3.5 h-3.5 ${resendCooldown > 0 ? "animate-spin" : ""}`} />

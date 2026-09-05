@@ -9,10 +9,7 @@ interface InvoiceHistoryProps {
   onDownloadInvoice: (id: string) => void;
 }
 
-export function InvoiceHistory({
-  invoices,
-  onDownloadInvoice,
-}: InvoiceHistoryProps) {
+export function InvoiceHistory({ invoices, onDownloadInvoice }: InvoiceHistoryProps) {
   return (
     <div className="p-6 sm:p-7 rounded-3xl bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 shadow-xs space-y-5">
       <div className="pb-3 border-b border-zinc-100 dark:border-zinc-800 flex items-center justify-between">

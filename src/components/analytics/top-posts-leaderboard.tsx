@@ -66,9 +66,7 @@ export function TopPostsLeaderboard() {
                     {post.title}
                   </p>
                 </div>
-                <p className="text-[11px] text-zinc-500 line-clamp-1">
-                  {post.hook}
-                </p>
+                <p className="text-[11px] text-zinc-500 line-clamp-1">{post.hook}</p>
                 <div className="flex items-center gap-3 text-[10px] text-zinc-400 font-mono pt-0.5">
                   <span className="flex items-center gap-1 text-zinc-600 dark:text-zinc-300 font-bold">
                     <Eye className="w-3 h-3 text-blue-500" /> {(post.views / 1000).toFixed(1)}k

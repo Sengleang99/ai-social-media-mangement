@@ -31,7 +31,8 @@ export const INITIAL_CONTENT_ITEMS: ContentItem[] = [
     format: "carousel",
     status: "published",
     platforms: ["instagram", "facebook"],
-    imageUrl: "https://images.unsplash.com/photo-1589367920969-ab8e050bbb04?w=800&auto=format&fit=crop&q=80",
+    imageUrl:
+      "https://images.unsplash.com/photo-1589367920969-ab8e050bbb04?w=800&auto=format&fit=crop&q=80",
     hashtags: ["#ArtisanBakery", "#SourdoughLove", "#FreshBakes", "#StoneOven"],
     createdAt: "2026-08-24",
     publishedAt: "2026-08-26",
@@ -50,7 +51,8 @@ export const INITIAL_CONTENT_ITEMS: ContentItem[] = [
     format: "reel",
     status: "published",
     platforms: ["tiktok", "instagram"],
-    imageUrl: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=800&auto=format&fit=crop&q=80",
+    imageUrl:
+      "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=800&auto=format&fit=crop&q=80",
     hashtags: ["#BakeryLife", "#FoodTikTok", "#CroissantCrunch", "#ASMR"],
     createdAt: "2026-08-25",
     publishedAt: "2026-08-27",
@@ -87,7 +89,8 @@ export const INITIAL_CONTENT_ITEMS: ContentItem[] = [
     format: "image",
     status: "scheduled",
     platforms: ["instagram"],
-    imageUrl: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&auto=format&fit=crop&q=80",
+    imageUrl:
+      "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&auto=format&fit=crop&q=80",
     hashtags: ["#ColdBrewCoffee", "#SpecialtyCoffee", "#MorningPairing"],
     createdAt: "2026-08-27",
     views: 0,
@@ -105,7 +108,8 @@ export const INITIAL_CONTENT_ITEMS: ContentItem[] = [
     format: "promo",
     status: "scheduled",
     platforms: ["facebook", "instagram"],
-    imageUrl: "https://images.unsplash.com/photo-1589367920969-ab8e050bbb04?w=800&auto=format&fit=crop&q=80",
+    imageUrl:
+      "https://images.unsplash.com/photo-1589367920969-ab8e050bbb04?w=800&auto=format&fit=crop&q=80",
     hashtags: ["#CommunityBakery", "#WeekendSpecial", "#SupportLocal"],
     createdAt: "2026-08-28",
     views: 0,

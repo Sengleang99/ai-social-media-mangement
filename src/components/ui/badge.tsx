@@ -14,10 +14,13 @@ export function Badge({
   ...props
 }: BadgeProps) {
   const variants: Record<string, string> = {
-    default: "bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 border-zinc-200 dark:border-zinc-700",
-    emerald: "bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800/60",
+    default:
+      "bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 border-zinc-200 dark:border-zinc-700",
+    emerald:
+      "bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800/60",
     blue: "bg-sky-50 dark:bg-sky-950/40 text-sky-700 dark:text-sky-300 border-sky-200 dark:border-sky-800/60",
-    purple: "bg-purple-50 dark:bg-purple-950/40 text-purple-700 dark:text-purple-300 border-purple-200 dark:border-purple-800/60",
+    purple:
+      "bg-purple-50 dark:bg-purple-950/40 text-purple-700 dark:text-purple-300 border-purple-200 dark:border-purple-800/60",
     outline: "bg-transparent text-zinc-700 dark:text-zinc-300 border-zinc-300 dark:border-zinc-700",
     subtle: "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-transparent",
   };
@@ -33,7 +36,7 @@ export function Badge({
         "inline-flex items-center gap-1 rounded-full border transition-colors",
         variants[variant],
         sizes[size],
-        className
+        className,
       )}
       {...props}
     >

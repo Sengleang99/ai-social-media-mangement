@@ -40,11 +40,7 @@ export function ConnectedAccounts({
           </p>
         </div>
 
-        <Button
-          variant="outline"
-          size="sm"
-          leftIcon={<Plus className="w-3.5 h-3.5" />}
-        >
+        <Button variant="outline" size="sm" leftIcon={<Plus className="w-3.5 h-3.5" />}>
           Add New Channel
         </Button>
       </div>
@@ -73,9 +69,7 @@ export function ConnectedAccounts({
                     <p className="text-xs font-bold text-zinc-900 dark:text-white truncate">
                       {acc.name}
                     </p>
-                    <p className="text-[10px] text-zinc-400 font-mono truncate">
-                      {acc.handle}
-                    </p>
+                    <p className="text-[10px] text-zinc-400 font-mono truncate">{acc.handle}</p>
                   </div>
                 </div>
 
@@ -95,9 +89,7 @@ export function ConnectedAccounts({
 
                 <div className="text-right">
                   <span className="text-[10px] text-zinc-400 block">Last Synced</span>
-                  <span className="text-[10px] text-zinc-500 font-mono">
-                    {acc.lastSync}
-                  </span>
+                  <span className="text-[10px] text-zinc-500 font-mono">{acc.lastSync}</span>
                 </div>
               </div>
 

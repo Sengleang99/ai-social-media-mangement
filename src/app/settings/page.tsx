@@ -132,8 +132,8 @@ export default function SettingsPage() {
                       ? "bg-rose-50 dark:bg-rose-950/40 text-rose-600 dark:text-rose-400 font-bold border border-rose-500/30"
                       : "bg-zinc-900 dark:bg-white text-white dark:text-zinc-950 font-bold shadow-xs"
                     : isDanger
-                    ? "text-rose-500 hover:bg-rose-50/50 dark:hover:bg-rose-950/20"
-                    : "text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100/70 dark:hover:bg-zinc-800/60 hover:text-zinc-900 dark:hover:text-white"
+                      ? "text-rose-500 hover:bg-rose-50/50 dark:hover:bg-rose-950/20"
+                      : "text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100/70 dark:hover:bg-zinc-800/60 hover:text-zinc-900 dark:hover:text-white",
                 )}
               >
                 <div
@@ -144,8 +144,8 @@ export default function SettingsPage() {
                         ? "bg-rose-500/20 text-rose-600"
                         : "bg-white/20 dark:bg-black/20 text-white dark:text-zinc-950"
                       : isDanger
-                      ? "bg-rose-500/10 text-rose-600"
-                      : "bg-zinc-100 dark:bg-zinc-800 text-zinc-500"
+                        ? "bg-rose-500/10 text-rose-600"
+                        : "bg-zinc-100 dark:bg-zinc-800 text-zinc-500",
                   )}
                 >
                   <Icon className="w-4 h-4" />
@@ -156,9 +156,7 @@ export default function SettingsPage() {
                   <p
                     className={cn(
                       "text-[10px] truncate mt-0.5",
-                      isSelected
-                        ? "opacity-80"
-                        : "text-zinc-400 dark:text-zinc-500"
+                      isSelected ? "opacity-80" : "text-zinc-400 dark:text-zinc-500",
                     )}
                   >
                     {tab.desc}
@@ -202,21 +200,12 @@ export default function SettingsPage() {
           )}
 
           {activeTab === "security" && (
-            <SecuritySettingsTab
-              sessions={sessions}
-              onRevokeSession={handleRevokeSession}
-            />
+            <SecuritySettingsTab sessions={sessions} onRevokeSession={handleRevokeSession} />
           )}
 
-          {activeTab === "billing" && (
-            <BillingSettingsTab
-              billing={billing}
-            />
-          )}
+          {activeTab === "billing" && <BillingSettingsTab billing={billing} />}
 
-          {activeTab === "danger" && (
-            <DangerZoneSettings />
-          )}
+          {activeTab === "danger" && <DangerZoneSettings />}
         </div>
       </div>
     </div>

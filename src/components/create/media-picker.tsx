@@ -32,7 +32,7 @@ export function MediaPicker({ selectedImage, onSelectImage }: MediaPickerProps) 
               "relative aspect-square rounded-2xl overflow-hidden border-2 transition-all cursor-pointer group shadow-xs",
               selectedImage === img.url
                 ? "border-emerald-500 ring-2 ring-emerald-500/30 scale-95"
-                : "border-zinc-200 dark:border-zinc-800 opacity-70 hover:opacity-100"
+                : "border-zinc-200 dark:border-zinc-800 opacity-70 hover:opacity-100",
             )}
           >
             <Image

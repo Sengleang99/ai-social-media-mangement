@@ -83,9 +83,7 @@ export function BrandGuidelines({ voiceDNA, onChange }: BrandGuidelinesProps) {
           <div className="space-y-2.5">
             <div className="flex items-center gap-2 text-emerald-700 dark:text-emerald-300">
               <CheckCircle2 className="w-4 h-4" />
-              <h4 className="text-xs font-bold uppercase tracking-wider">
-                Words to Always Favor
-              </h4>
+              <h4 className="text-xs font-bold uppercase tracking-wider">Words to Always Favor</h4>
             </div>
 
             <div className="flex flex-wrap gap-1.5">
@@ -179,9 +177,7 @@ export function BrandGuidelines({ voiceDNA, onChange }: BrandGuidelinesProps) {
           <div className="space-y-2.5">
             <div className="flex items-center gap-2 text-sky-700 dark:text-sky-300">
               <Hash className="w-4 h-4" />
-              <h4 className="text-xs font-bold uppercase tracking-wider">
-                Default Brand Hashtags
-              </h4>
+              <h4 className="text-xs font-bold uppercase tracking-wider">Default Brand Hashtags</h4>
             </div>
 
             <div className="flex flex-wrap gap-1.5">

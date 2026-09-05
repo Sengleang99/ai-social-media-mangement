@@ -79,7 +79,10 @@ export function PricingSection() {
   const [isAnnual, setIsAnnual] = React.useState(true);
 
   return (
-    <section id="pricing" className="w-full py-16 sm:py-24 px-4 sm:px-6 relative overflow-hidden bg-white/60 dark:bg-zinc-950/60">
+    <section
+      id="pricing"
+      className="w-full py-16 sm:py-24 px-4 sm:px-6 relative overflow-hidden bg-white/60 dark:bg-zinc-950/60"
+    >
       <div className="max-w-6xl mx-auto space-y-12">
         {/* Section Header (Matching Design System) */}
         <div className="text-center max-w-2xl mx-auto space-y-3">
@@ -90,7 +93,8 @@ export function PricingSection() {
             Simple & Transparent Pricing.
           </h2>
           <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed">
-            Start for free, test the AI engine, and upgrade when you are ready to scale your social media presence on total autopilot.
+            Start for free, test the AI engine, and upgrade when you are ready to scale your social
+            media presence on total autopilot.
           </p>
 
           {/* Billing Toggle (Monthly / Annual) */}
@@ -98,7 +102,7 @@ export function PricingSection() {
             <span
               className={cn(
                 "text-xs sm:text-sm font-medium transition-colors cursor-pointer",
-                !isAnnual ? "text-zinc-900 dark:text-white font-bold" : "text-zinc-500"
+                !isAnnual ? "text-zinc-900 dark:text-white font-bold" : "text-zinc-500",
               )}
               onClick={() => setIsAnnual(false)}
             >
@@ -110,13 +114,13 @@ export function PricingSection() {
               onClick={() => setIsAnnual((prev) => !prev)}
               className={cn(
                 "w-12 h-6 rounded-full transition-colors relative p-0.5 cursor-pointer",
-                isAnnual ? "bg-emerald-600" : "bg-zinc-300 dark:bg-zinc-700"
+                isAnnual ? "bg-emerald-600" : "bg-zinc-300 dark:bg-zinc-700",
               )}
             >
               <div
                 className={cn(
                   "w-5 h-5 rounded-full bg-white transition-transform duration-200 shadow-xs",
-                  isAnnual ? "translate-x-6" : "translate-x-0"
+                  isAnnual ? "translate-x-6" : "translate-x-0",
                 )}
               />
             </button>
@@ -124,7 +128,7 @@ export function PricingSection() {
             <span
               className={cn(
                 "text-xs sm:text-sm font-medium transition-colors flex items-center gap-1.5 cursor-pointer",
-                isAnnual ? "text-zinc-900 dark:text-white font-bold" : "text-zinc-500"
+                isAnnual ? "text-zinc-900 dark:text-white font-bold" : "text-zinc-500",
               )}
               onClick={() => setIsAnnual(true)}
             >
@@ -148,7 +152,7 @@ export function PricingSection() {
                   "rounded-3xl p-7 sm:p-8 flex flex-col justify-between transition-all duration-300 relative",
                   plan.popular
                     ? "bg-white dark:bg-zinc-900 border-2 border-emerald-500 shadow-xl shadow-emerald-500/10 ring-4 ring-emerald-500/10 md:-translate-y-2"
-                    : "bg-white dark:bg-zinc-900/80 border border-zinc-200/90 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 shadow-sm"
+                    : "bg-white dark:bg-zinc-900/80 border border-zinc-200/90 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 shadow-sm",
                 )}
               >
                 {/* Popular Pill */}
@@ -163,9 +167,7 @@ export function PricingSection() {
 
                 <div>
                   <div className="mb-4">
-                    <h3 className="text-xl font-bold text-zinc-900 dark:text-white">
-                      {plan.name}
-                    </h3>
+                    <h3 className="text-xl font-bold text-zinc-900 dark:text-white">{plan.name}</h3>
                     <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-1 min-h-[32px]">
                       {plan.description}
                     </p>
@@ -189,7 +191,10 @@ export function PricingSection() {
                       Included features:
                     </span>
                     {plan.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-zinc-600 dark:text-zinc-300">
+                      <div
+                        key={idx}
+                        className="flex items-start gap-2.5 text-xs sm:text-sm text-zinc-600 dark:text-zinc-300"
+                      >
                         <div className="p-0.5 rounded-full bg-emerald-50 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5">
                           <Check className="w-3.5 h-3.5 stroke-[2.5]" />
                         </div>

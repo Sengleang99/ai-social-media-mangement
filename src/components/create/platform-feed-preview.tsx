@@ -53,7 +53,7 @@ export function PlatformFeedPreview({
                 "flex-1 min-w-[100px] py-2 px-3 rounded-xl flex items-center justify-center gap-2 text-xs font-semibold transition-all cursor-pointer",
                 isSelected
                   ? "bg-white dark:bg-zinc-800 text-zinc-900 dark:text-white shadow-sm border border-zinc-200/80 dark:border-zinc-700"
-                  : "text-zinc-500 hover:text-zinc-900 dark:hover:text-white hover:bg-white/40"
+                  : "text-zinc-500 hover:text-zinc-900 dark:hover:text-white hover:bg-white/40",
               )}
             >
               <PlatformIcon platform={tab.id} className="w-3.5 h-3.5" />
@@ -124,9 +124,7 @@ export function PlatformFeedPreview({
                 <Bookmark className="w-5 h-5 text-zinc-700 dark:text-zinc-300 hover:text-emerald-500 transition-colors cursor-pointer" />
               </div>
 
-              <p className="text-xs font-bold text-zinc-900 dark:text-white">
-                1,428 likes
-              </p>
+              <p className="text-xs font-bold text-zinc-900 dark:text-white">1,428 likes</p>
 
               {/* Caption */}
               <div className="text-xs text-zinc-800 dark:text-zinc-200 leading-relaxed whitespace-pre-line">
@@ -140,9 +138,7 @@ export function PlatformFeedPreview({
                 </p>
               </div>
 
-              <p className="text-[10px] text-zinc-400 uppercase pt-1">
-                2 hours ago · Translate
-              </p>
+              <p className="text-[10px] text-zinc-400 uppercase pt-1">2 hours ago · Translate</p>
             </div>
           </div>
         )}
@@ -173,9 +169,7 @@ export function PlatformFeedPreview({
             <div className="text-xs sm:text-sm text-zinc-900 dark:text-zinc-100 leading-relaxed whitespace-pre-line">
               <p className="font-semibold">{activePost.hook}</p>
               <p className="mt-2">{activePost.body}</p>
-              <p className="mt-2 text-sky-500 font-mono text-xs">
-                {activePost.hashtags.join(" ")}
-              </p>
+              <p className="mt-2 text-sky-500 font-mono text-xs">{activePost.hashtags.join(" ")}</p>
             </div>
 
             {selectedImage && (
@@ -326,9 +320,7 @@ export function PlatformFeedPreview({
                   <p className="text-xs font-bold text-zinc-900 dark:text-white">
                     GreenLeaf Bakery & Foodworks
                   </p>
-                  <p className="text-[10px] text-zinc-400">
-                    12,400 followers · 1h · Edited
-                  </p>
+                  <p className="text-[10px] text-zinc-400">12,400 followers · 1h · Edited</p>
                 </div>
               </div>
               <MoreHorizontal className="w-4 h-4 text-zinc-400" />

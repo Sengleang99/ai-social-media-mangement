@@ -64,11 +64,17 @@ export function AuthShell({
       <div className="w-full max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-500 dark:text-zinc-500 pt-6 gap-2 relative z-10 border-t border-zinc-200/60 dark:border-zinc-800/60">
         <span>&copy; {new Date().getFullYear()} SocialAI Inc. All rights reserved.</span>
         <div className="flex items-center gap-4">
-          <Link href="/#privacy" className="hover:underline hover:text-zinc-700 dark:hover:text-zinc-300">
+          <Link
+            href="/#privacy"
+            className="hover:underline hover:text-zinc-700 dark:hover:text-zinc-300"
+          >
             Privacy Policy
           </Link>
           <span>&bull;</span>
-          <Link href="/#terms" className="hover:underline hover:text-zinc-700 dark:hover:text-zinc-300">
+          <Link
+            href="/#terms"
+            className="hover:underline hover:text-zinc-700 dark:hover:text-zinc-300"
+          >
             Terms of Service
           </Link>
         </div>

@@ -54,11 +54,7 @@ export default function AnalyticsPage() {
           </Button>
 
           <Link href="/create">
-            <Button
-              variant="primary"
-              size="sm"
-              leftIcon={<Plus className="w-4 h-4" />}
-            >
+            <Button variant="primary" size="sm" leftIcon={<Plus className="w-4 h-4" />}>
               New Post
             </Button>
           </Link>
@@ -69,10 +65,7 @@ export default function AnalyticsPage() {
       <AnalyticsOverviewKpis />
 
       {/* 2. Interactive Impressions & Growth Area Chart */}
-      <GrowthChart
-        timeline={timeline}
-        onTimelineChange={setTimeline}
-      />
+      <GrowthChart timeline={timeline} onTimelineChange={setTimeline} />
 
       {/* 3. Platform Breakdown Cards */}
       <PlatformBreakdown />

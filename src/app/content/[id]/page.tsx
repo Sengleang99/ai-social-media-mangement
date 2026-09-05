@@ -28,7 +28,9 @@ export default function ContentItemDetailPage() {
   const item = INITIAL_CONTENT_ITEMS.find((i) => i.id === id) || INITIAL_CONTENT_ITEMS[0];
 
   const [copied, setCopied] = React.useState(false);
-  const [activePlatformTab, setActivePlatformTab] = React.useState(item.platforms[0] || "instagram");
+  const [activePlatformTab, setActivePlatformTab] = React.useState(
+    item.platforms[0] || "instagram",
+  );
 
   const handleCopy = () => {
     const text = `${item.hook}\n\n${item.body}\n\n${item.hashtags.join(" ")}`;
@@ -54,17 +56,19 @@ export default function ContentItemDetailPage() {
             variant="secondary"
             size="sm"
             onClick={handleCopy}
-            leftIcon={copied ? <Check className="w-3.5 h-3.5 text-emerald-500" /> : <Copy className="w-3.5 h-3.5" />}
+            leftIcon={
+              copied ? (
+                <Check className="w-3.5 h-3.5 text-emerald-500" />
+              ) : (
+                <Copy className="w-3.5 h-3.5" />
+              )
+            }
           >
             {copied ? "Copied!" : "Copy Post"}
           </Button>
 
           <Link href={`/create?repurpose=${encodeURIComponent(item.hook)}`}>
-            <Button
-              variant="primary"
-              size="sm"
-              leftIcon={<Sparkles className="w-3.5 h-3.5" />}
-            >
+            <Button variant="primary" size="sm" leftIcon={<Sparkles className="w-3.5 h-3.5" />}>
               1-Click Repurpose with AI
             </Button>
           </Link>

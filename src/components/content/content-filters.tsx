@@ -2,13 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import {
-  Search,
-  Plus,
-  LayoutGrid,
-  List,
-  SlidersHorizontal,
-} from "lucide-react";
+import { Search, Plus, LayoutGrid, List, SlidersHorizontal } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PlatformIcon } from "@/components/ui/social-icons";
 import { cn } from "@/lib/utils";
@@ -81,11 +75,7 @@ export function ContentFilters({
 
         <div className="flex items-center gap-2.5">
           <Link href="/create">
-            <Button
-              variant="primary"
-              size="sm"
-              leftIcon={<Plus className="w-4 h-4" />}
-            >
+            <Button variant="primary" size="sm" leftIcon={<Plus className="w-4 h-4" />}>
               Create Content
             </Button>
           </Link>
@@ -118,7 +108,7 @@ export function ContentFilters({
                   "p-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all cursor-pointer",
                   viewMode === "grid"
                     ? "bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white shadow-xs font-bold"
-                    : "text-zinc-500 hover:text-zinc-900 dark:hover:text-white"
+                    : "text-zinc-500 hover:text-zinc-900 dark:hover:text-white",
                 )}
                 title="Grid View"
               >
@@ -133,7 +123,7 @@ export function ContentFilters({
                   "p-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all cursor-pointer",
                   viewMode === "table"
                     ? "bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white shadow-xs font-bold"
-                    : "text-zinc-500 hover:text-zinc-900 dark:hover:text-white"
+                    : "text-zinc-500 hover:text-zinc-900 dark:hover:text-white",
                 )}
                 title="Table View"
               >
@@ -159,16 +149,14 @@ export function ContentFilters({
                   "px-3 py-1.5 rounded-xl text-xs font-medium transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap",
                   active
                     ? "bg-zinc-900 dark:bg-white text-white dark:text-zinc-950 font-bold shadow-xs"
-                    : "text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800"
+                    : "text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800",
                 )}
               >
                 <span>{tab.label}</span>
                 <span
                   className={cn(
                     "text-[10px] px-1.5 py-0.2 rounded-full font-mono",
-                    active
-                      ? "bg-white/20 dark:bg-black/20"
-                      : "bg-zinc-200/70 dark:bg-zinc-800"
+                    active ? "bg-white/20 dark:bg-black/20" : "bg-zinc-200/70 dark:bg-zinc-800",
                   )}
                 >
                   {count}
@@ -182,9 +170,7 @@ export function ContentFilters({
         <div className="flex flex-wrap items-center justify-between gap-2 pt-1">
           {/* Channels Filter */}
           <div className="flex items-center gap-1 overflow-x-auto no-scrollbar">
-            <span className="text-[11px] text-zinc-400 font-semibold mr-1 shrink-0">
-              Channel:
-            </span>
+            <span className="text-[11px] text-zinc-400 font-semibold mr-1 shrink-0">Channel:</span>
             {PLATFORM_FILTERS.map((pf) => {
               const active = platformFilter === pf.id;
               return (
@@ -195,12 +181,10 @@ export function ContentFilters({
                     "px-2.5 py-1 rounded-xl text-[11px] font-medium transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap",
                     active
                       ? "bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-500 font-bold shadow-2xs"
-                      : "text-zinc-500 hover:bg-zinc-100 dark:hover:bg-zinc-800 border border-transparent"
+                      : "text-zinc-500 hover:bg-zinc-100 dark:hover:bg-zinc-800 border border-transparent",
                   )}
                 >
-                  {pf.id !== "all" && (
-                    <PlatformIcon platform={pf.id} className="w-3 h-3" />
-                  )}
+                  {pf.id !== "all" && <PlatformIcon platform={pf.id} className="w-3 h-3" />}
                   <span>{pf.label}</span>
                 </button>
               );

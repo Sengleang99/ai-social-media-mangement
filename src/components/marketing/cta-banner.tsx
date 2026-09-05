@@ -21,7 +21,8 @@ export function CtaBanner() {
           </h2>
 
           <p className="text-sm sm:text-base text-emerald-50 max-w-lg mx-auto leading-relaxed">
-            Configure your brand voice in under 2 minutes. Connect Instagram, TikTok, X, Facebook, and YouTube today.
+            Configure your brand voice in under 2 minutes. Connect Instagram, TikTok, X, Facebook,
+            and YouTube today.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4 pt-2">

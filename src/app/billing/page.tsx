@@ -37,11 +37,7 @@ export default function BillingPage() {
 
   const handleTopUpCredits = () => {
     setUsageItems((prev) =>
-      prev.map((item) =>
-        item.id === "credits"
-          ? { ...item, total: item.total + 2500 }
-          : item
-      )
+      prev.map((item) => (item.id === "credits" ? { ...item, total: item.total + 2500 } : item)),
     );
     showToast("⚡ Booster pack (+2,500 AI credits) activated!");
   };
@@ -85,25 +81,16 @@ export default function BillingPage() {
       />
 
       {/* 2. Live Feature Quotas & Credit Breakdown */}
-      <CreditUsageBreakdown
-        usageItems={usageItems}
-        onTopUpCredits={handleTopUpCredits}
-      />
+      <CreditUsageBreakdown usageItems={usageItems} onTopUpCredits={handleTopUpCredits} />
 
       {/* 3. Tier Comparison Grid */}
-      <PlanComparisonGrid
-        billingCycle={billingCycle}
-        onSelectPlan={handleSelectPlan}
-      />
+      <PlanComparisonGrid billingCycle={billingCycle} onSelectPlan={handleSelectPlan} />
 
       {/* 4. Payment Methods & Tax Details */}
       <PaymentMethods />
 
       {/* 5. Invoicing & Statement History */}
-      <InvoiceHistory
-        invoices={invoices}
-        onDownloadInvoice={handleDownloadInvoice}
-      />
+      <InvoiceHistory invoices={invoices} onDownloadInvoice={handleDownloadInvoice} />
     </div>
   );
 }

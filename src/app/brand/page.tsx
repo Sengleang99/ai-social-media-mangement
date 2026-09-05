@@ -67,7 +67,8 @@ export default function BrandPage() {
               Brand Kit & Voice DNA Studio
             </h1>
             <p className="text-xs text-zinc-500 dark:text-zinc-400">
-              Set your tone archetype, visual tokens, and guardrail rules for omnichannel consistency
+              Set your tone archetype, visual tokens, and guardrail rules for omnichannel
+              consistency
             </p>
           </div>
         </div>
@@ -83,11 +84,7 @@ export default function BrandPage() {
           </Button>
 
           <Link href="/create">
-            <Button
-              variant="primary"
-              size="sm"
-              leftIcon={<Sparkles className="w-4 h-4" />}
-            >
+            <Button variant="primary" size="sm" leftIcon={<Sparkles className="w-4 h-4" />}>
               Test in Studio
             </Button>
           </Link>
@@ -95,33 +92,19 @@ export default function BrandPage() {
       </div>
 
       {/* 1. AI Voice & Tone DNA Persona */}
-      <BrandVoiceDNASettings
-        voiceDNA={voiceDNA}
-        onChange={setVoiceDNA}
-      />
+      <BrandVoiceDNASettings voiceDNA={voiceDNA} onChange={setVoiceDNA} />
 
       {/* 2. Brand Colors & Palette Swatches */}
-      <BrandColors
-        colors={colors}
-        onAddColor={handleAddColor}
-        onDeleteColor={handleDeleteColor}
-      />
+      <BrandColors colors={colors} onAddColor={handleAddColor} onDeleteColor={handleDeleteColor} />
 
       {/* 3. Brand Typography & Visual Theme */}
-      <BrandTypography
-        fonts={INITIAL_BRAND_FONTS}
-      />
+      <BrandTypography fonts={INITIAL_BRAND_FONTS} />
 
       {/* 4. Brand Logos, Stamps & Watermarks */}
-      <BrandAssets
-        assets={INITIAL_BRAND_ASSETS}
-      />
+      <BrandAssets assets={INITIAL_BRAND_ASSETS} />
 
       {/* 5. Golden Vocabulary & Banned Words Guardrails */}
-      <BrandGuidelines
-        voiceDNA={voiceDNA}
-        onChange={setVoiceDNA}
-      />
+      <BrandGuidelines voiceDNA={voiceDNA} onChange={setVoiceDNA} />
     </div>
   );
 }

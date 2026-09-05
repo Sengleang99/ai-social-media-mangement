@@ -44,9 +44,7 @@ export function PaymentMethods() {
               <p className="text-xs font-bold text-zinc-900 dark:text-white">
                 Visa ending in •••• 4242
               </p>
-              <p className="text-[11px] text-zinc-400 font-mono">
-                Expires 08/29 · Primary
-              </p>
+              <p className="text-[11px] text-zinc-400 font-mono">Expires 08/29 · Primary</p>
             </div>
           </div>
 
@@ -80,18 +78,10 @@ export function PaymentMethods() {
               />
             </div>
             <div className="flex justify-end gap-2 pt-1">
-              <Button
-                variant="secondary"
-                size="sm"
-                onClick={() => setShowAddCard(false)}
-              >
+              <Button variant="secondary" size="sm" onClick={() => setShowAddCard(false)}>
                 Cancel
               </Button>
-              <Button
-                variant="primary"
-                size="sm"
-                onClick={() => setShowAddCard(false)}
-              >
+              <Button variant="primary" size="sm" onClick={() => setShowAddCard(false)}>
                 Save Card
               </Button>
             </div>

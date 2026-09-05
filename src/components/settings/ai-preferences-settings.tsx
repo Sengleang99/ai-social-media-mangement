@@ -10,10 +10,7 @@ interface AiPreferencesSettingsProps {
   onSave: (updated: AiPreferenceSettings) => void;
 }
 
-export function AiPreferencesSettings({
-  preferences,
-  onSave,
-}: AiPreferencesSettingsProps) {
+export function AiPreferencesSettings({ preferences, onSave }: AiPreferencesSettingsProps) {
   const [formData, setFormData] = React.useState(preferences);
   const [saved, setSaved] = React.useState(false);
 
@@ -159,7 +156,8 @@ export function AiPreferencesSettings({
           <div className="p-4 rounded-2xl bg-zinc-50 dark:bg-zinc-950 border border-zinc-200/80 dark:border-zinc-800 flex items-center justify-between">
             <div className="space-y-0.5">
               <p className="text-xs font-bold text-zinc-900 dark:text-white flex items-center gap-1.5">
-                <Eye className="w-3.5 h-3.5 text-emerald-500" /> 3-Second Viral Hook Score Prediction
+                <Eye className="w-3.5 h-3.5 text-emerald-500" /> 3-Second Viral Hook Score
+                Prediction
               </p>
               <p className="text-[11px] text-zinc-500">
                 Predict CTR and stopping power before post is queued

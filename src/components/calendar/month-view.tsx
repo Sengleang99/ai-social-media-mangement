@@ -16,12 +16,7 @@ interface MonthViewProps {
 
 const DAYS_OF_WEEK = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-export function MonthView({
-  currentDate,
-  posts,
-  onSelectPost,
-  onAddPostOnDate,
-}: MonthViewProps) {
+export function MonthView({ currentDate, posts, onSelectPost, onAddPostOnDate }: MonthViewProps) {
   const year = currentDate.getFullYear();
   const month = currentDate.getMonth();
 
@@ -103,7 +98,8 @@ export function MonthView({
                 !cell.isCurrentMonth
                   ? "bg-zinc-50/40 dark:bg-zinc-950/20 text-zinc-400"
                   : "bg-white dark:bg-zinc-900 hover:bg-zinc-50/70 dark:hover:bg-zinc-800/40",
-                cell.isToday && "ring-1 ring-inset ring-emerald-500 bg-emerald-500/5 dark:bg-emerald-950/10"
+                cell.isToday &&
+                  "ring-1 ring-inset ring-emerald-500 bg-emerald-500/5 dark:bg-emerald-950/10",
               )}
             >
               {/* Day Header & Add Button */}
@@ -114,8 +110,8 @@ export function MonthView({
                     cell.isToday
                       ? "bg-emerald-500 text-white font-bold"
                       : cell.isCurrentMonth
-                      ? "text-zinc-800 dark:text-zinc-200"
-                      : "text-zinc-400"
+                        ? "text-zinc-800 dark:text-zinc-200"
+                        : "text-zinc-400",
                   )}
                 >
                   {cell.day}
@@ -147,8 +143,8 @@ export function MonthView({
                         isPublished
                           ? "bg-blue-50/80 dark:bg-blue-950/40 border-blue-200 dark:border-blue-800/80 text-blue-950 dark:text-blue-200"
                           : isAiQueued
-                          ? "bg-purple-50/80 dark:bg-purple-950/40 border-purple-200 dark:border-purple-800/80 text-purple-950 dark:text-purple-200"
-                          : "bg-emerald-50/80 dark:bg-emerald-950/40 border-emerald-200 dark:border-emerald-800/80 text-emerald-950 dark:text-emerald-200"
+                            ? "bg-purple-50/80 dark:bg-purple-950/40 border-purple-200 dark:border-purple-800/80 text-purple-950 dark:text-purple-200"
+                            : "bg-emerald-50/80 dark:bg-emerald-950/40 border-emerald-200 dark:border-emerald-800/80 text-emerald-950 dark:text-emerald-200",
                       )}
                     >
                       {/* Image Thumbnail or Platform Icon */}

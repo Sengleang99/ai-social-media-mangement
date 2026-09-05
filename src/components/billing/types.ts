@@ -65,7 +65,8 @@ export const BILLING_PLANS: PlanTier[] = [
     name: "Agency & Enterprise",
     priceMonthly: 149,
     priceYearly: 119,
-    description: "Unlimited scale and custom brand models for agencies and multi-location businesses.",
+    description:
+      "Unlimited scale and custom brand models for agencies and multi-location businesses.",
     badge: "High Growth",
     features: [
       "Unlimited Social Accounts",

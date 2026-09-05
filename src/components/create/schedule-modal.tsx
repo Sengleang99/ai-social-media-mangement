@@ -34,9 +34,7 @@ export function ScheduleModal({
               <h3 className="text-base font-bold text-zinc-900 dark:text-white">
                 Schedule on Algorithmic Peak
               </h3>
-              <p className="text-[11px] text-zinc-400">
-                AI calculated peak engagement windows
-              </p>
+              <p className="text-[11px] text-zinc-400">AI calculated peak engagement windows</p>
             </div>
           </div>
           <button
@@ -52,11 +50,10 @@ export function ScheduleModal({
             <span>🔥 Recommended Peak Time:</span>
             <span>+42% Higher Reach</span>
           </div>
-          <p className="text-xs text-zinc-700 dark:text-zinc-300">
-            {activePost.peakTime}
-          </p>
+          <p className="text-xs text-zinc-700 dark:text-zinc-300">{activePost.peakTime}</p>
           <p className="text-[11px] text-zinc-500 dark:text-zinc-400 leading-normal">
-            Follower activity on your connected {activeChannels.join(", ")} accounts peaks during this commute window.
+            Follower activity on your connected {activeChannels.join(", ")} accounts peaks during
+            this commute window.
           </p>
         </div>
 
@@ -72,13 +69,7 @@ export function ScheduleModal({
             Confirm Peak Time Autopilot
           </Button>
 
-          <Button
-            type="button"
-            variant="secondary"
-            size="md"
-            isFullWidth
-            onClick={onClose}
-          >
+          <Button type="button" variant="secondary" size="md" isFullWidth onClick={onClose}>
             Cancel
           </Button>
         </div>

@@ -11,11 +11,7 @@ interface BrandColorsProps {
   onDeleteColor: (id: string) => void;
 }
 
-export function BrandColors({
-  colors,
-  onAddColor,
-  onDeleteColor,
-}: BrandColorsProps) {
+export function BrandColors({ colors, onAddColor, onDeleteColor }: BrandColorsProps) {
   const [copiedHex, setCopiedHex] = React.useState<string | null>(null);
   const [showAddForm, setShowAddForm] = React.useState(false);
   const [newName, setNewName] = React.useState("");
@@ -158,9 +154,7 @@ export function BrandColors({
                   {color.name}
                 </p>
                 <div className="flex items-center justify-between">
-                  <span className="text-[11px] font-mono text-zinc-500">
-                    {color.hex}
-                  </span>
+                  <span className="text-[11px] font-mono text-zinc-500">{color.hex}</span>
 
                   <div className="flex items-center gap-1">
                     <button

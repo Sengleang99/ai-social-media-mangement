@@ -24,9 +24,7 @@ export function ContentStats({ items }: ContentStatsProps) {
           <p className="text-xl font-bold text-zinc-900 dark:text-white leading-none">
             {publishedCount + scheduledCount}
           </p>
-          <p className="text-[11px] text-zinc-500 dark:text-zinc-400 mt-1">
-            Active Assets
-          </p>
+          <p className="text-[11px] text-zinc-500 dark:text-zinc-400 mt-1">Active Assets</p>
         </div>
       </div>
 
@@ -38,9 +36,7 @@ export function ContentStats({ items }: ContentStatsProps) {
           <p className="text-xl font-bold text-zinc-900 dark:text-white leading-none">
             {(totalViews / 1000).toFixed(1)}k
           </p>
-          <p className="text-[11px] text-zinc-500 dark:text-zinc-400 mt-1">
-            Total Impressions
-          </p>
+          <p className="text-[11px] text-zinc-500 dark:text-zinc-400 mt-1">Total Impressions</p>
         </div>
       </div>
 
@@ -63,12 +59,8 @@ export function ContentStats({ items }: ContentStatsProps) {
           <TrendingUp className="w-5 h-5" />
         </div>
         <div>
-          <p className="text-xl font-bold text-zinc-900 dark:text-white leading-none">
-            12.2%
-          </p>
-          <p className="text-[11px] text-zinc-500 dark:text-zinc-400 mt-1">
-            Avg Engagement Rate
-          </p>
+          <p className="text-xl font-bold text-zinc-900 dark:text-white leading-none">12.2%</p>
+          <p className="text-[11px] text-zinc-500 dark:text-zinc-400 mt-1">Avg Engagement Rate</p>
         </div>
       </div>
     </div>

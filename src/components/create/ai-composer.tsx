@@ -19,6 +19,8 @@ interface AiComposerProps {
   onToggleHookOptimizer: (val: boolean) => void;
   autoHashtags: boolean;
   onToggleAutoHashtags: (val: boolean) => void;
+  onGenerate?: () => void;
+  isGenerating?: boolean;
 }
 
 const AVAILABLE_CHANNELS = [
@@ -42,6 +44,8 @@ export function AiComposer({
   onToggleHookOptimizer,
   autoHashtags,
   onToggleAutoHashtags,
+  onGenerate,
+  isGenerating,
 }: AiComposerProps) {
   return (
     <div className="space-y-6">
@@ -52,8 +56,9 @@ export function AiComposer({
             <Sparkles className="w-3.5 h-3.5 text-emerald-500" />
             <span>1. Core Topic or Insight</span>
           </label>
-          <span className="text-[11px] font-medium text-zinc-400">
-            GPT-4o + Vector Tone
+          <span className="text-[11px] font-medium text-emerald-600 dark:text-emerald-400 font-semibold flex items-center gap-1">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+            Gemini AI Live
           </span>
         </div>
 
@@ -63,10 +68,33 @@ export function AiComposer({
             rows={3}
             value={topicPrompt}
             onChange={(e) => onTopicPromptChange(e.target.value)}
+            onKeyDown={(e) => {
+              if ((e.ctrlKey || e.metaKey) && e.key === "Enter") {
+                e.preventDefault();
+                onGenerate?.();
+              }
+            }}
             placeholder="What do you want to share? e.g., 'Behind the scenes at 5 AM', '20% off weekend promo'..."
             className="w-full p-4 text-xs sm:text-sm bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-2xl focus:bg-white dark:focus:bg-zinc-900 focus:outline-none focus:ring-2 focus:ring-emerald-500/40 focus:border-emerald-500 transition-all text-zinc-900 dark:text-zinc-100 placeholder:text-zinc-400 resize-none shadow-xs"
           />
         </div>
+
+        {/* Action Button Right Under Prompt */}
+        {onGenerate && (
+          <button
+            type="button"
+            onClick={onGenerate}
+            disabled={isGenerating || !topicPrompt.trim()}
+            className="w-full py-3 px-4 rounded-2xl bg-emerald-600 hover:bg-emerald-500 disabled:opacity-50 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md shadow-emerald-600/20 transition-all cursor-pointer disabled:cursor-not-allowed"
+          >
+            <Sparkles className={cn("w-4 h-4", isGenerating && "animate-spin")} />
+            <span>
+              {isGenerating
+                ? "Synthesizing Posts with AI..."
+                : "✨ Generate Social Posts (Ctrl+Enter)"}
+            </span>
+          </button>
+        )}
 
         {/* Quick Inspiration Pills */}
         <div className="space-y-1.5 pt-1">
@@ -87,9 +115,7 @@ export function AiComposer({
                 <p className="text-xs font-bold text-zinc-800 dark:text-zinc-200 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 truncate">
                   {item.title}
                 </p>
-                <p className="text-[10px] text-zinc-400 line-clamp-1 mt-0.5">
-                  {item.prompt}
-                </p>
+                <p className="text-[10px] text-zinc-400 line-clamp-1 mt-0.5">{item.prompt}</p>
               </button>
             ))}
           </div>
@@ -122,7 +148,7 @@ export function AiComposer({
                     "p-2.5 rounded-xl border flex items-center gap-2 transition-all cursor-pointer text-xs font-medium",
                     isActive
                       ? "bg-emerald-50 dark:bg-emerald-950/60 border-emerald-500 text-emerald-800 dark:text-emerald-300 font-bold shadow-xs"
-                      : "bg-zinc-50 dark:bg-zinc-800/40 border-zinc-200 dark:border-zinc-800 text-zinc-400 opacity-60 hover:opacity-100"
+                      : "bg-zinc-50 dark:bg-zinc-800/40 border-zinc-200 dark:border-zinc-800 text-zinc-400 opacity-60 hover:opacity-100",
                   )}
                 >
                   <PlatformIcon platform={channel.id} className="w-4 h-4 shrink-0" />
@@ -150,16 +176,14 @@ export function AiComposer({
                   "p-3 rounded-2xl border text-left transition-all cursor-pointer",
                   selectedTone === tone.id
                     ? "bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 border-zinc-900 dark:border-white shadow-sm"
-                    : "bg-zinc-50/80 dark:bg-zinc-950 border-zinc-200 dark:border-zinc-800 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800"
+                    : "bg-zinc-50/80 dark:bg-zinc-950 border-zinc-200 dark:border-zinc-800 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800",
                 )}
               >
                 <p className="text-xs font-bold">{tone.label}</p>
                 <p
                   className={cn(
                     "text-[10px] mt-0.5 line-clamp-1",
-                    selectedTone === tone.id
-                      ? "text-zinc-300 dark:text-zinc-600"
-                      : "text-zinc-400"
+                    selectedTone === tone.id ? "text-zinc-300 dark:text-zinc-600" : "text-zinc-400",
                   )}
                 >
                   {tone.desc}

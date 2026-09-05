@@ -59,13 +59,11 @@ export function ReviewsSentiment({ reviews }: ReviewsSentimentProps) {
             </div>
 
             <div className="pt-2 border-t border-zinc-200/60 dark:border-zinc-800/80 flex items-center justify-between">
-              <span className="text-xs font-bold text-zinc-900 dark:text-white">
-                {rev.author}
-              </span>
+              <span className="text-xs font-bold text-zinc-900 dark:text-white">{rev.author}</span>
 
               <Link
                 href={`/create?prompt=${encodeURIComponent(
-                  `Turn this 5-star customer review from ${rev.author} into an engaging social proof post: "${rev.content}"`
+                  `Turn this 5-star customer review from ${rev.author} into an engaging social proof post: "${rev.content}"`,
                 )}`}
               >
                 <Button

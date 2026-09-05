@@ -2,14 +2,7 @@
 
 import * as React from "react";
 import Image from "next/image";
-import {
-  X,
-  Clock,
-  Send,
-  Trash2,
-  Calendar,
-  Sparkles,
-} from "lucide-react";
+import { X, Clock, Send, Trash2, Calendar, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PlatformIcon } from "@/components/ui/social-icons";
 import { ScheduledPost } from "./types";
@@ -71,12 +64,8 @@ function PostPreviewModalContent({
               <Calendar className="w-4 h-4" />
             </div>
             <div>
-              <h3 className="text-base font-bold text-zinc-900 dark:text-white">
-                {post.title}
-              </h3>
-              <p className="text-[11px] text-zinc-400">
-                Scheduled distribution details
-              </p>
+              <h3 className="text-base font-bold text-zinc-900 dark:text-white">{post.title}</h3>
+              <p className="text-[11px] text-zinc-400">Scheduled distribution details</p>
             </div>
           </div>
           <button
@@ -116,9 +105,7 @@ function PostPreviewModalContent({
               )}
             </div>
 
-            <p className="text-xs font-bold text-zinc-900 dark:text-white">
-              {post.hook}
-            </p>
+            <p className="text-xs font-bold text-zinc-900 dark:text-white">{post.hook}</p>
             <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed whitespace-pre-line">
               {post.body}
             </p>

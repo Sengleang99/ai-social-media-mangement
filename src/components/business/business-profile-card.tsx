@@ -10,10 +10,7 @@ interface BusinessProfileCardProps {
   onSave: (updated: BusinessProfile) => void;
 }
 
-export function BusinessProfileCard({
-  profile,
-  onSave,
-}: BusinessProfileCardProps) {
+export function BusinessProfileCard({ profile, onSave }: BusinessProfileCardProps) {
   const [isEditing, setIsEditing] = React.useState(false);
   const [formData, setFormData] = React.useState(profile);
 
@@ -57,7 +54,9 @@ export function BusinessProfileCard({
               setIsEditing(true);
             }
           }}
-          leftIcon={isEditing ? <Check className="w-3.5 h-3.5" /> : <Edit2 className="w-3.5 h-3.5" />}
+          leftIcon={
+            isEditing ? <Check className="w-3.5 h-3.5" /> : <Edit2 className="w-3.5 h-3.5" />
+          }
         >
           {isEditing ? "Save Changes" : "Edit Profile"}
         </Button>

@@ -42,7 +42,7 @@ export function Navbar() {
                   "relative py-1 transition-colors duration-150 hover:text-zinc-900 dark:hover:text-white",
                   isActive
                     ? "text-emerald-600 dark:text-emerald-400 font-semibold"
-                    : "text-zinc-600 dark:text-zinc-400"
+                    : "text-zinc-600 dark:text-zinc-400",
                 )}
               >
                 {link.label}
@@ -98,7 +98,12 @@ export function Navbar() {
 
           <div className="pt-3 border-t border-zinc-100 dark:border-zinc-800 flex flex-col gap-2">
             <Link href="/signup" onClick={() => setMobileMenuOpen(false)}>
-              <Button variant="primary" size="md" isFullWidth rightIcon={<ArrowRight className="w-4 h-4" />}>
+              <Button
+                variant="primary"
+                size="md"
+                isFullWidth
+                rightIcon={<ArrowRight className="w-4 h-4" />}
+              >
                 Create An Account
               </Button>
             </Link>

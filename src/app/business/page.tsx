@@ -46,8 +46,8 @@ export default function BusinessPage() {
               ...acc,
               status: acc.status === "connected" ? "disconnected" : "connected",
             }
-          : acc
-      )
+          : acc,
+      ),
     );
     showToast("Social account connection status modified.");
   };
@@ -112,11 +112,7 @@ export default function BusinessPage() {
 
         <div className="flex items-center gap-2.5 self-start sm:self-auto">
           <Link href="/create">
-            <Button
-              variant="primary"
-              size="sm"
-              leftIcon={<Sparkles className="w-4 h-4" />}
-            >
+            <Button variant="primary" size="sm" leftIcon={<Sparkles className="w-4 h-4" />}>
               Generate for Business
             </Button>
           </Link>
@@ -124,10 +120,7 @@ export default function BusinessPage() {
       </div>
 
       {/* 1. Core Profile Identity */}
-      <BusinessProfileCard
-        profile={profile}
-        onSave={handleSaveProfile}
-      />
+      <BusinessProfileCard profile={profile} onSave={handleSaveProfile} />
 
       {/* 2. Connected Social Channels & Integrations */}
       <ConnectedAccounts
@@ -144,15 +137,10 @@ export default function BusinessPage() {
       />
 
       {/* 4. Customer Reviews & 1-Click Social Proof Conversion */}
-      <ReviewsSentiment
-        reviews={INITIAL_REVIEWS}
-      />
+      <ReviewsSentiment reviews={INITIAL_REVIEWS} />
 
       {/* 5. Team Management */}
-      <TeamManagement
-        members={members}
-        onInviteMember={handleInviteMember}
-      />
+      <TeamManagement members={members} onInviteMember={handleInviteMember} />
     </div>
   );
 }

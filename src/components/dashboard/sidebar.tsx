@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { SocialHubLogo } from "@/components/ui/social-icons";
+import { useAuth } from "@/lib/supabase/auth-context";
 
 export interface NavItem {
   label: string;
@@ -41,7 +42,8 @@ export const MAIN_NAV_ITEMS: NavItem[] = [
     href: "/create",
     icon: Sparkles,
     badge: "AI",
-    badgeColor: "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20",
+    badgeColor:
+      "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20",
   },
   {
     label: "Content",
@@ -94,6 +96,7 @@ interface SidebarProps {
 
 export function Sidebar({ isOpen, onClose }: SidebarProps) {
   const pathname = usePathname();
+  const { displayName, displayEmail, initials, signOut } = useAuth();
 
   const isLinkActive = (href: string) => {
     if (href === "/dashboard") {
@@ -160,7 +163,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
                     "group flex items-center justify-between px-3 py-2 rounded-xl text-sm font-medium transition-all duration-150",
                     active
                       ? "bg-emerald-500/10 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-400 font-semibold shadow-xs"
-                      : "text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-900 hover:text-zinc-900 dark:hover:text-zinc-100"
+                      : "text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-900 hover:text-zinc-900 dark:hover:text-zinc-100",
                   )}
                 >
                   <div className="flex items-center gap-3">
@@ -169,7 +172,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
                         "w-4 h-4 transition-colors",
                         active
                           ? "text-emerald-600 dark:text-emerald-400"
-                          : "text-zinc-400 group-hover:text-zinc-600 dark:group-hover:text-zinc-300"
+                          : "text-zinc-400 group-hover:text-zinc-600 dark:group-hover:text-zinc-300",
                       )}
                     />
                     <span>{item.label}</span>
@@ -178,7 +181,8 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
                     <span
                       className={cn(
                         "text-[10px] font-bold px-1.5 py-0.5 rounded-md leading-none",
-                        item.badgeColor || "bg-zinc-100 text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300"
+                        item.badgeColor ||
+                          "bg-zinc-100 text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300",
                       )}
                     >
                       {item.badge}
@@ -208,7 +212,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
                     "group flex items-center justify-between px-3 py-2 rounded-xl text-sm font-medium transition-all duration-150",
                     active
                       ? "bg-emerald-500/10 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-400 font-semibold shadow-xs"
-                      : "text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-900 hover:text-zinc-900 dark:hover:text-zinc-100"
+                      : "text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-900 hover:text-zinc-900 dark:hover:text-zinc-100",
                   )}
                 >
                   <div className="flex items-center gap-3">
@@ -217,7 +221,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
                         "w-4 h-4 transition-colors",
                         active
                           ? "text-emerald-600 dark:text-emerald-400"
-                          : "text-zinc-400 group-hover:text-zinc-600 dark:group-hover:text-zinc-300"
+                          : "text-zinc-400 group-hover:text-zinc-600 dark:group-hover:text-zinc-300",
                       )}
                     />
                     <span>{item.label}</span>
@@ -226,7 +230,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
                     <span
                       className={cn(
                         "text-[10px] font-bold px-1.5 py-0.5 rounded-md leading-none",
-                        item.badgeColor
+                        item.badgeColor,
                       )}
                     >
                       {item.badge}
@@ -246,9 +250,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
           <div className="flex items-center justify-between mb-2">
             <div className="flex items-center gap-1.5">
               <Zap className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 fill-emerald-500/20" />
-              <span className="text-xs font-bold text-zinc-900 dark:text-white">
-                AI Generation
-              </span>
+              <span className="text-xs font-bold text-zinc-900 dark:text-white">AI Generation</span>
             </div>
             <span className="text-[11px] font-medium text-emerald-600 dark:text-emerald-400">
               8,450 / 10k
@@ -277,22 +279,23 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
           <div className="flex items-center gap-2.5 min-w-0">
             <div className="relative">
               <div className="w-8 h-8 rounded-full bg-linear-to-tr from-emerald-600 to-indigo-600 text-white flex items-center justify-center font-bold text-xs shadow-xs">
-                AM
+                {initials}
               </div>
               <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-500 border-2 border-white dark:border-zinc-950 rounded-full" />
             </div>
             <div className="min-w-0 flex-1">
               <p className="text-xs font-semibold text-zinc-900 dark:text-zinc-100 truncate">
-                Alex Morgan
+                {displayName}
               </p>
               <p className="text-[10px] text-zinc-400 dark:text-zinc-500 truncate">
-                alex@brandpulse.io
+                {displayEmail}
               </p>
             </div>
           </div>
           <button
             title="Log Out"
-            className="p-1.5 text-zinc-400 hover:text-rose-600 dark:hover:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/30 rounded-lg transition-colors"
+            onClick={() => signOut()}
+            className="p-1.5 text-zinc-400 hover:text-rose-600 dark:hover:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/30 rounded-lg transition-colors cursor-pointer"
           >
             <LogOut className="w-3.5 h-3.5" />
           </button>
@@ -304,9 +307,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
   return (
     <>
       {/* Desktop Persistent Sidebar */}
-      <aside className="hidden lg:block h-screen sticky top-0 shrink-0 z-30">
-        {content}
-      </aside>
+      <aside className="hidden lg:block h-screen sticky top-0 shrink-0 z-30">{content}</aside>
 
       {/* Mobile Drawer Backdrop */}
       {isOpen && (
@@ -321,7 +322,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
       <div
         className={cn(
           "fixed top-0 bottom-0 left-0 z-50 lg:hidden transition-transform duration-300 ease-in-out shadow-2xl",
-          isOpen ? "translate-x-0" : "-translate-x-full"
+          isOpen ? "translate-x-0" : "-translate-x-full",
         )}
       >
         {content}

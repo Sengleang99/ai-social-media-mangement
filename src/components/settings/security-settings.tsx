@@ -10,10 +10,7 @@ interface SecuritySettingsProps {
   onRevokeSession: (id: string) => void;
 }
 
-export function SecuritySettingsTab({
-  sessions,
-  onRevokeSession,
-}: SecuritySettingsProps) {
+export function SecuritySettingsTab({ sessions, onRevokeSession }: SecuritySettingsProps) {
   const [twoFactorEnabled, setTwoFactorEnabled] = React.useState(false);
 
   return (

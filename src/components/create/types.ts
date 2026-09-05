@@ -34,7 +34,11 @@ export interface PresetImage {
 export const TONE_OPTIONS: ToneOption[] = [
   { id: "viral", label: "🔥 Viral Growth", desc: "High CTR hooks & curiosity gaps" },
   { id: "story", label: "📖 Relatable Story", desc: "Human storytelling & emotional resonance" },
-  { id: "business", label: "🥐 Friendly Local Business", desc: "Warm, welcoming neighborhood vibe" },
+  {
+    id: "business",
+    label: "🥐 Friendly Local Business",
+    desc: "Warm, welcoming neighborhood vibe",
+  },
   { id: "contrarian", label: "⚡ Contrarian Insight", desc: "Challenge standard industry myths" },
   { id: "educational", label: "💡 5-Step How-To", desc: "Actionable tips with bullet points" },
 ];
@@ -43,22 +47,26 @@ export const TONE_OPTIONS: ToneOption[] = [
 export const INSPIRATION_PROMPTS: InspirationPrompt[] = [
   {
     title: "🥐 Weekend Fresh Bakes Promo",
-    prompt: "Promote a special weekend 20% discount on artisan sourdough and croissants with free cold brew coffee.",
+    prompt:
+      "Promote a special weekend 20% discount on artisan sourdough and croissants with free cold brew coffee.",
     tone: "business",
   },
   {
     title: "🥖 Behind-the-Scenes 5 AM Kneading",
-    prompt: "Share behind-the-scenes 5:00 AM dough kneading routine and explain why 36-hour fermentation makes bread digestible.",
+    prompt:
+      "Share behind-the-scenes 5:00 AM dough kneading routine and explain why 36-hour fermentation makes bread digestible.",
     tone: "story",
   },
   {
     title: "📉 The 'Post 5x a Day' Myth",
-    prompt: "Explain why posting 1 high-signal carousel beats posting 5 rushed posts a day in 2026.",
+    prompt:
+      "Explain why posting 1 high-signal carousel beats posting 5 rushed posts a day in 2026.",
     tone: "viral",
   },
   {
     title: "⭐ 5-Star Customer Spotlight",
-    prompt: "Turn a glowing 5-star customer review about our cinnamon rolls into an engaging social proof post.",
+    prompt:
+      "Turn a glowing 5-star customer review about our cinnamon rolls into an engaging social proof post.",
     tone: "story",
   },
 ];
@@ -133,7 +141,10 @@ export const DEFAULT_POSTS: Record<string, PostVariant> = {
     peakTime: "Tomorrow at 8:00 AM (Morning breakfast feed)",
     alternativeHooks: [
       { text: "Who needs a warm cinnamon roll & fresh iced latte this weekend? 🙋‍♀️☕", score: 94 },
-      { text: "Support your local baker! Special 20% savings for all our Facebook community:", score: 91 },
+      {
+        text: "Support your local baker! Special 20% savings for all our Facebook community:",
+        score: 91,
+      },
       { text: "Meet the team behind your morning artisan sourdough bread 🥖❤️", score: 88 },
     ],
   },
@@ -144,9 +155,18 @@ export const DEFAULT_POSTS: Record<string, PostVariant> = {
     hookScore: 96,
     peakTime: "Today at 9:00 AM (Workday kickoff)",
     alternativeHooks: [
-      { text: "Craftsmanship as a competitive moat: Lessons from running a modern artisanal bakery.", score: 95 },
-      { text: "Why signal-to-noise ratio matters more than post volume in 2026 marketing.", score: 92 },
-      { text: "Building an authentic local brand in an era of automated generic content.", score: 90 },
+      {
+        text: "Craftsmanship as a competitive moat: Lessons from running a modern artisanal bakery.",
+        score: 95,
+      },
+      {
+        text: "Why signal-to-noise ratio matters more than post volume in 2026 marketing.",
+        score: 92,
+      },
+      {
+        text: "Building an authentic local brand in an era of automated generic content.",
+        score: 90,
+      },
     ],
   },
 };

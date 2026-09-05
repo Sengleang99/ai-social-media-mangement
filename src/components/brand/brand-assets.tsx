@@ -24,11 +24,7 @@ export function BrandAssets({ assets }: BrandAssetsProps) {
           </p>
         </div>
 
-        <Button
-          variant="outline"
-          size="sm"
-          leftIcon={<Upload className="w-3.5 h-3.5" />}
-        >
+        <Button variant="outline" size="sm" leftIcon={<Upload className="w-3.5 h-3.5" />}>
           Upload Asset
         </Button>
       </div>
@@ -58,9 +54,7 @@ export function BrandAssets({ assets }: BrandAssetsProps) {
                 <h4 className="text-xs font-bold text-zinc-900 dark:text-white line-clamp-1">
                   {asset.title}
                 </h4>
-                <p className="text-[10px] text-zinc-400 font-mono mt-0.5">
-                  {asset.dimensions}
-                </p>
+                <p className="text-[10px] text-zinc-400 font-mono mt-0.5">{asset.dimensions}</p>
               </div>
             </div>
 

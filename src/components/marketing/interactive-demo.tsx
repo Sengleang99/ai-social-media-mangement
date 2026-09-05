@@ -81,7 +81,8 @@ export function InteractiveDemo() {
             Test the AI Engine in Real-Time
           </h2>
           <p className="text-xs sm:text-sm text-zinc-400">
-            Type any idea or pick a preset to see how SocialAI formats platform-native viral copy instantly.
+            Type any idea or pick a preset to see how SocialAI formats platform-native viral copy
+            instantly.
           </p>
         </div>
 
@@ -106,7 +107,7 @@ export function InteractiveDemo() {
                       "flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer flex-1 justify-center border",
                       selectedPlatform === plat
                         ? "bg-emerald-600 border-emerald-500 text-white shadow-sm"
-                        : "bg-zinc-800/80 border-zinc-700 text-zinc-400 hover:text-white"
+                        : "bg-zinc-800/80 border-zinc-700 text-zinc-400 hover:text-white",
                     )}
                   >
                     <PlatformIcon platform={plat} className="w-3.5 h-3.5" />
@@ -130,7 +131,9 @@ export function InteractiveDemo() {
             </div>
 
             <div>
-              <span className="text-[11px] text-zinc-400 block mb-1.5 font-medium">Quick suggestions:</span>
+              <span className="text-[11px] text-zinc-400 block mb-1.5 font-medium">
+                Quick suggestions:
+              </span>
               <div className="flex flex-wrap gap-1.5">
                 {SAMPLE_PROMPTS.map((p) => (
                   <button
@@ -176,7 +179,13 @@ export function InteractiveDemo() {
                   size="sm"
                   variant="ghost"
                   onClick={handleCopy}
-                  leftIcon={copied ? <Check className="w-3 h-3 text-emerald-400" /> : <Copy className="w-3 h-3" />}
+                  leftIcon={
+                    copied ? (
+                      <Check className="w-3 h-3 text-emerald-400" />
+                    ) : (
+                      <Copy className="w-3 h-3" />
+                    )
+                  }
                   className="text-xs text-zinc-400 hover:text-white h-7 px-2"
                 >
                   {copied ? "Copied" : "Copy"}
@@ -189,10 +198,8 @@ export function InteractiveDemo() {
             </div>
 
             <div className="mt-4 pt-3 border-t border-zinc-800/80 flex items-center justify-between">
-              <span className="text-[11px] text-zinc-400">
-                ✨ Ready to schedule automatically
-              </span>
-              <Link href="/onboarding">
+              <span className="text-[11px] text-zinc-400">✨ Ready to schedule automatically</span>
+              <Link href="/signup">
                 <Button size="sm" variant="primary" rightIcon={<ArrowRight className="w-3 h-3" />}>
                   Setup Full Automation
                 </Button>

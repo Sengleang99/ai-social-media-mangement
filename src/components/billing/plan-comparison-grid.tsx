@@ -10,10 +10,7 @@ interface PlanComparisonGridProps {
   onSelectPlan: (planId: string) => void;
 }
 
-export function PlanComparisonGrid({
-  billingCycle,
-  onSelectPlan,
-}: PlanComparisonGridProps) {
+export function PlanComparisonGrid({ billingCycle, onSelectPlan }: PlanComparisonGridProps) {
   return (
     <div className="space-y-4">
       <div>
@@ -28,8 +25,7 @@ export function PlanComparisonGrid({
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
         {BILLING_PLANS.map((plan) => {
           const isPro = plan.id === "pro";
-          const price =
-            billingCycle === "yearly" ? plan.priceYearly : plan.priceMonthly;
+          const price = billingCycle === "yearly" ? plan.priceYearly : plan.priceMonthly;
 
           return (
             <div
@@ -47,9 +43,7 @@ export function PlanComparisonGrid({
                     <h4 className="text-base font-bold text-zinc-900 dark:text-white">
                       {plan.name}
                     </h4>
-                    <p className="text-xs text-zinc-500 line-clamp-1 mt-0.5">
-                      {plan.description}
-                    </p>
+                    <p className="text-xs text-zinc-500 line-clamp-1 mt-0.5">{plan.description}</p>
                   </div>
 
                   {plan.badge && (

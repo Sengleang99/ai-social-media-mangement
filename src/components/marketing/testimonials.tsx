@@ -47,7 +47,10 @@ const TESTIMONIALS: Testimonial[] = [
 
 export function TestimonialsSection() {
   return (
-    <section id="reviews" className="w-full py-16 sm:py-24 px-4 sm:px-6 relative overflow-hidden bg-zinc-50/60 dark:bg-zinc-900/40">
+    <section
+      id="reviews"
+      className="w-full py-16 sm:py-24 px-4 sm:px-6 relative overflow-hidden bg-zinc-50/60 dark:bg-zinc-900/40"
+    >
       <div className="max-w-6xl mx-auto space-y-12">
         {/* Section Header (Matching Design System) */}
         <div className="text-center max-w-2xl mx-auto space-y-3">
@@ -58,7 +61,8 @@ export function TestimonialsSection() {
             Loved by 10,000+ Creators & Brands.
           </h2>
           <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed">
-            See how founders, creators, and agencies use SocialHub to build consistent audience flywheels without burnout.
+            See how founders, creators, and agencies use SocialHub to build consistent audience
+            flywheels without burnout.
           </p>
         </div>
 
@@ -98,11 +102,10 @@ export function TestimonialsSection() {
                   {t.name.charAt(0)}
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-zinc-900 dark:text-white">
-                    {t.name}
-                  </h4>
+                  <h4 className="text-sm font-bold text-zinc-900 dark:text-white">{t.name}</h4>
                   <p className="text-xs text-zinc-500 dark:text-zinc-400">
-                    {t.role} • <span className="text-emerald-600 dark:text-emerald-400">{t.handle}</span>
+                    {t.role} •{" "}
+                    <span className="text-emerald-600 dark:text-emerald-400">{t.handle}</span>
                   </p>
                 </div>
               </div>

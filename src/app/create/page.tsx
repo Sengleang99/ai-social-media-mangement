@@ -3,12 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import {
-  RefreshCw,
-  Calendar,
-  Wand2,
-  CheckCircle2,
-} from "lucide-react";
+import { RefreshCw, Calendar, Wand2, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   PostVariant,
@@ -29,7 +24,8 @@ export default function CreatePostPage() {
 
   // Studio State
   const [topicPrompt, setTopicPrompt] = React.useState(
-    initialPrompt || "Promote our fresh weekend bakery special: 20% off sourdough & free cold brew coffee"
+    initialPrompt ||
+      "Promote our fresh weekend bakery special: 20% off sourdough & free cold brew coffee",
   );
   const [selectedTone, setSelectedTone] = React.useState("viral");
   const [selectedImage, setSelectedImage] = React.useState(PRESET_IMAGES[1].url);
@@ -47,7 +43,8 @@ export default function CreatePostPage() {
   const [autoHashtags, setAutoHashtags] = React.useState(true);
 
   // Content state per platform
-  const [postsContent, setPostsContent] = React.useState<Record<string, PostVariant>>(DEFAULT_POSTS);
+  const [postsContent, setPostsContent] =
+    React.useState<Record<string, PostVariant>>(DEFAULT_POSTS);
   const [isGenerating, setIsGenerating] = React.useState(false);
   const [copied, setCopied] = React.useState(false);
   const [toastMessage, setToastMessage] = React.useState<string | null>(null);
@@ -62,7 +59,7 @@ export default function CreatePostPage() {
         ? prev.length > 1
           ? prev.filter((item) => item !== channelId)
           : prev
-        : [...prev, channelId]
+        : [...prev, channelId],
     );
   };
 
@@ -128,20 +125,70 @@ export default function CreatePostPage() {
   };
 
   // Generate / Remix AI Post
-  const handleGenerate = () => {
-    if (!topicPrompt.trim()) return;
+  const handleGenerate = async () => {
+    if (!topicPrompt.trim()) {
+      showToast("⚠️ Please enter a topic or idea first!");
+      return;
+    }
     setIsGenerating(true);
 
-    setTimeout(() => {
+    try {
+      const res = await fetch("/api/ai/generate", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          prompt: topicPrompt,
+          tone: selectedTone,
+          channels: activeChannels,
+          clicheFilter,
+          hookOptimizer,
+          autoHashtags,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok || !data.success) {
+        throw new Error(data.error || "Failed to generate AI posts");
+      }
+
+      if (data.posts && Object.keys(data.posts).length > 0) {
+        setPostsContent((prev) => ({
+          ...prev,
+          ...data.posts,
+        }));
+
+        const generatedKeys = Object.keys(data.posts);
+        if (!data.posts[selectedPlatform] && generatedKeys.length > 0) {
+          setSelectedPlatform(generatedKeys[0]);
+        }
+
+        // Clear prompt field upon successful generation
+        setTopicPrompt("");
+      }
+
+      const count = Object.keys(data.posts || {}).length;
+      if (data.meta?.isMock) {
+        showToast(`✨ Generated ${count} post variations! (Configure GEMINI_API_KEY for live AI)`);
+      } else {
+        showToast(`✨ Successfully generated ${count} omnichannel posts!`);
+      }
+    } catch (error) {
+      console.error("AI Generation error:", error);
+      const message =
+        error instanceof Error ? error.message : "Generation failed. Please try again.";
+      showToast(`⚠️ ${message}`);
+    } finally {
       setIsGenerating(false);
-      showToast("✨ AI generated 5 omnichannel post variations!");
-    }, 900);
+    }
   };
 
   // Toast Helper
   const showToast = (msg: string) => {
     setToastMessage(msg);
-    setTimeout(() => setToastMessage(null), 3000);
+    setTimeout(() => setToastMessage(null), 4000);
   };
 
   // Copy full post
@@ -230,12 +277,11 @@ export default function CreatePostPage() {
             onToggleHookOptimizer={setHookOptimizer}
             autoHashtags={autoHashtags}
             onToggleAutoHashtags={setAutoHashtags}
+            onGenerate={handleGenerate}
+            isGenerating={isGenerating}
           />
 
-          <MediaPicker
-            selectedImage={selectedImage}
-            onSelectImage={setSelectedImage}
-          />
+          <MediaPicker selectedImage={selectedImage} onSelectImage={setSelectedImage} />
         </div>
 
         {/* Right 6 Columns: Live Preview, Editor & Actions */}

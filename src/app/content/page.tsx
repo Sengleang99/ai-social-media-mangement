@@ -20,7 +20,9 @@ export default function ContentPage() {
   const [formatFilter, setFormatFilter] = React.useState("all");
   const [viewMode, setViewMode] = React.useState<"grid" | "table">("grid");
 
-  const [selectedRepurposeItem, setSelectedRepurposeItem] = React.useState<ContentItem | null>(null);
+  const [selectedRepurposeItem, setSelectedRepurposeItem] = React.useState<ContentItem | null>(
+    null,
+  );
   const [copiedId, setCopiedId] = React.useState<string | null>(null);
   const [toastMessage, setToastMessage] = React.useState<string | null>(null);
 
@@ -70,7 +72,7 @@ export default function ContentPage() {
       if (
         platformFilter !== "all" &&
         !item.platforms.includes(
-          platformFilter as "instagram" | "x" | "tiktok" | "facebook" | "linkedin"
+          platformFilter as "instagram" | "x" | "tiktok" | "facebook" | "linkedin",
         )
       )
         return false;

@@ -29,10 +29,10 @@ export function CaptionEditor({
     selectedPlatform === "x"
       ? 280
       : selectedPlatform === "instagram"
-      ? 2200
-      : selectedPlatform === "tiktok"
-      ? 2200
-      : 3000;
+        ? 2200
+        : selectedPlatform === "tiktok"
+          ? 2200
+          : 3000;
 
   const charPercentage = Math.min(100, Math.round((currentTotalChars / maxChars) * 100));
 
@@ -50,7 +50,7 @@ export function CaptionEditor({
             <div
               className={cn(
                 "h-full rounded-full transition-all",
-                charPercentage > 90 ? "bg-rose-500" : "bg-emerald-500"
+                charPercentage > 90 ? "bg-rose-500" : "bg-emerald-500",
               )}
               style={{ width: `${charPercentage}%` }}
             />

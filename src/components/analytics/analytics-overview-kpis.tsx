@@ -1,14 +1,7 @@
 "use client";
 
 import * as React from "react";
-import {
-  TrendingUp,
-  Eye,
-  Users,
-  Percent,
-  Clock,
-  Sparkles,
-} from "lucide-react";
+import { TrendingUp, Eye, Users, Percent, Clock, Sparkles } from "lucide-react";
 
 export function AnalyticsOverviewKpis() {
   return (
@@ -28,9 +21,7 @@ export function AnalyticsOverviewKpis() {
           <p className="text-2xl sm:text-3xl font-extrabold text-zinc-900 dark:text-white tracking-tight">
             128.4K
           </p>
-          <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-1">
-            Total Multi-Channel Reach
-          </p>
+          <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-1">Total Multi-Channel Reach</p>
         </div>
       </div>
 

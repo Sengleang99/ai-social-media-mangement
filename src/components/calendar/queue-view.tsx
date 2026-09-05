@@ -3,13 +3,7 @@
 import * as React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  Clock,
-  Sparkles,
-  Send,
-  Trash2,
-  Edit,
-} from "lucide-react";
+import { Clock, Sparkles, Send, Trash2, Edit } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PlatformIcon } from "@/components/ui/social-icons";
 import { cn } from "@/lib/utils";
@@ -22,12 +16,7 @@ interface QueueViewProps {
   onDeletePost: (postId: string) => void;
 }
 
-export function QueueView({
-  posts,
-  onSelectPost,
-  onPublishPost,
-  onDeletePost,
-}: QueueViewProps) {
+export function QueueView({ posts, onSelectPost, onPublishPost, onDeletePost }: QueueViewProps) {
   // Sort posts chronologically by date and time
   const sortedPosts = [...posts].sort((a, b) => a.date.localeCompare(b.date));
 
@@ -57,8 +46,8 @@ export function QueueView({
                 isPublished
                   ? "bg-zinc-50/50 dark:bg-zinc-950/30 border-zinc-200 dark:border-zinc-800/80 opacity-70"
                   : isAiQueued
-                  ? "bg-purple-500/5 border-purple-500/30 hover:border-purple-500/60"
-                  : "bg-white dark:bg-zinc-900 border-zinc-200/80 dark:border-zinc-800 hover:border-emerald-500/50 shadow-xs"
+                    ? "bg-purple-500/5 border-purple-500/30 hover:border-purple-500/60"
+                    : "bg-white dark:bg-zinc-900 border-zinc-200/80 dark:border-zinc-800 hover:border-emerald-500/50 shadow-xs",
               )}
             >
               {/* Left Column: Image + Info */}
@@ -95,8 +84,8 @@ export function QueueView({
                         isPublished
                           ? "bg-blue-500/10 text-blue-600 dark:text-blue-400"
                           : isAiQueued
-                          ? "bg-purple-500/10 text-purple-600 dark:text-purple-400"
-                          : "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400"
+                            ? "bg-purple-500/10 text-purple-600 dark:text-purple-400"
+                            : "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400",
                       )}
                     >
                       {post.status.replace("_", " ")}
@@ -149,11 +138,7 @@ export function QueueView({
                 )}
 
                 <Link href={`/create?edit=${post.id}`}>
-                  <Button
-                    variant="secondary"
-                    size="sm"
-                    leftIcon={<Edit className="w-3 h-3" />}
-                  >
+                  <Button variant="secondary" size="sm" leftIcon={<Edit className="w-3 h-3" />}>
                     Edit
                   </Button>
                 </Link>

@@ -10,10 +10,7 @@ interface NotificationSettingsProps {
   onSave: (updated: NotificationSettings) => void;
 }
 
-export function NotificationSettingsTab({
-  notifications,
-  onSave,
-}: NotificationSettingsProps) {
+export function NotificationSettingsTab({ notifications, onSave }: NotificationSettingsProps) {
   const [formData, setFormData] = React.useState(notifications);
   const [saved, setSaved] = React.useState(false);
 
@@ -55,9 +52,7 @@ export function NotificationSettingsTab({
             <input
               type="checkbox"
               checked={formData.emailPostSuccess}
-              onChange={(e) =>
-                setFormData({ ...formData, emailPostSuccess: e.target.checked })
-              }
+              onChange={(e) => setFormData({ ...formData, emailPostSuccess: e.target.checked })}
               className="w-4 h-4 accent-emerald-600 rounded-md cursor-pointer"
             />
           </div>
@@ -74,9 +69,7 @@ export function NotificationSettingsTab({
             <input
               type="checkbox"
               checked={formData.emailViralSpikes}
-              onChange={(e) =>
-                setFormData({ ...formData, emailViralSpikes: e.target.checked })
-              }
+              onChange={(e) => setFormData({ ...formData, emailViralSpikes: e.target.checked })}
               className="w-4 h-4 accent-emerald-600 rounded-md cursor-pointer"
             />
           </div>
@@ -93,9 +86,7 @@ export function NotificationSettingsTab({
             <input
               type="checkbox"
               checked={formData.emailWeeklyDigest}
-              onChange={(e) =>
-                setFormData({ ...formData, emailWeeklyDigest: e.target.checked })
-              }
+              onChange={(e) => setFormData({ ...formData, emailWeeklyDigest: e.target.checked })}
               className="w-4 h-4 accent-emerald-600 rounded-md cursor-pointer"
             />
           </div>
@@ -110,24 +101,18 @@ export function NotificationSettingsTab({
             <input
               type="checkbox"
               checked={formData.slackEnabled}
-              onChange={(e) =>
-                setFormData({ ...formData, slackEnabled: e.target.checked })
-              }
+              onChange={(e) => setFormData({ ...formData, slackEnabled: e.target.checked })}
               className="w-4 h-4 accent-emerald-600 rounded-md cursor-pointer"
             />
           </div>
 
           {formData.slackEnabled && (
             <div className="space-y-1.5 animate-fadeIn">
-              <label className="text-[11px] text-zinc-500">
-                Incoming Webhook URL
-              </label>
+              <label className="text-[11px] text-zinc-500">Incoming Webhook URL</label>
               <input
                 type="text"
                 value={formData.slackWebhookUrl}
-                onChange={(e) =>
-                  setFormData({ ...formData, slackWebhookUrl: e.target.value })
-                }
+                onChange={(e) => setFormData({ ...formData, slackWebhookUrl: e.target.value })}
                 className="w-full p-2.5 text-xs rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 text-zinc-900 dark:text-white font-mono focus:outline-none"
               />
             </div>

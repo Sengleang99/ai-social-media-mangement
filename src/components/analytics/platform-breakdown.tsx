@@ -32,9 +32,7 @@ export function PlatformBreakdown() {
                   <PlatformIcon platform={plat.platform} className="w-4 h-4" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-zinc-900 dark:text-white">
-                    {plat.name}
-                  </h4>
+                  <h4 className="text-sm font-bold text-zinc-900 dark:text-white">{plat.name}</h4>
                   <span className="text-[10px] text-zinc-400">
                     {plat.publishedCount} Posts This Month
                   </span>

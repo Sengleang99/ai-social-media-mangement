@@ -48,7 +48,11 @@ export default function CalendarPage() {
   // Filter posts by platform
   const filteredPosts = React.useMemo(() => {
     if (platformFilter === "all") return posts;
-    return posts.filter((p) => p.platforms.includes(platformFilter as "instagram" | "x" | "tiktok" | "facebook" | "linkedin"));
+    return posts.filter((p) =>
+      p.platforms.includes(
+        platformFilter as "instagram" | "x" | "tiktok" | "facebook" | "linkedin",
+      ),
+    );
   }, [posts, platformFilter]);
 
   // Reschedule post
@@ -62,19 +66,15 @@ export default function CalendarPage() {
               time: newTime || p.time,
               status: "scheduled",
             }
-          : p
-      )
+          : p,
+      ),
     );
     showToast(`📅 Rescheduled post for ${newDate} at ${newTime}`);
   };
 
   // Instant publish
   const handlePublishNow = (postId: string) => {
-    setPosts((prev) =>
-      prev.map((p) =>
-        p.id === postId ? { ...p, status: "published" } : p
-      )
-    );
+    setPosts((prev) => prev.map((p) => (p.id === postId ? { ...p, status: "published" } : p)));
     showToast("🚀 Post published successfully to all target channels!");
   };
 

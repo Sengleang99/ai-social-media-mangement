@@ -26,12 +26,7 @@ interface ContentGridProps {
   copiedId: string | null;
 }
 
-export function ContentGrid({
-  items,
-  onRepurpose,
-  onCopy,
-  copiedId,
-}: ContentGridProps) {
+export function ContentGrid({ items, onRepurpose, onCopy, copiedId }: ContentGridProps) {
   if (items.length === 0) {
     return (
       <div className="p-12 text-center rounded-3xl bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 space-y-3">
@@ -39,7 +34,8 @@ export function ContentGrid({
           No content matches your filter criteria
         </p>
         <p className="text-xs text-zinc-400 max-w-sm mx-auto">
-          Try clearing your search query or switching channel filters to view existing social assets.
+          Try clearing your search query or switching channel filters to view existing social
+          assets.
         </p>
       </div>
     );
@@ -127,8 +123,8 @@ export function ContentGrid({
                         isPublished
                           ? "bg-blue-500/10 text-blue-600 dark:text-blue-400"
                           : isScheduled
-                          ? "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400"
-                          : "bg-zinc-100 dark:bg-zinc-800 text-zinc-500"
+                            ? "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400"
+                            : "bg-zinc-100 dark:bg-zinc-800 text-zinc-500",
                       )}
                     >
                       {item.status}
@@ -222,12 +218,7 @@ export function ContentGrid({
                 </Button>
 
                 <Link href={`/content/${item.id}`}>
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className="px-2"
-                    title="View Analytics"
-                  >
+                  <Button variant="ghost" size="sm" className="px-2" title="View Analytics">
                     <ArrowUpRight className="w-4 h-4" />
                   </Button>
                 </Link>

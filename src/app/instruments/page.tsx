@@ -1,8 +1,8 @@
-import { createClient } from "@/lib/supabase/server"
+import { createClient } from "@/lib/supabase/server";
 
 export default async function InstrumentsPage() {
-  const supabase = await createClient()
-  const { data: instruments, error } = await supabase.from("instruments").select()
+  const supabase = await createClient();
+  const { data: instruments, error } = await supabase.from("instruments").select();
 
   return (
     <main className="min-h-screen bg-neutral-950 text-neutral-100 p-8">
@@ -19,7 +19,8 @@ export default async function InstrumentsPage() {
             <p className="font-semibold text-red-200">Error querying instruments:</p>
             <p className="text-sm mt-1">{error.message}</p>
             <p className="text-xs text-neutral-400 mt-2">
-              Note: Make sure you ran the SQL query in Supabase SQL editor to create the `instruments` table and enable RLS policies.
+              Note: Make sure you ran the SQL query in Supabase SQL editor to create the
+              `instruments` table and enable RLS policies.
             </p>
           </div>
         ) : (
@@ -54,5 +55,5 @@ export default async function InstrumentsPage() {
         )}
       </div>
     </main>
-  )
+  );
 }

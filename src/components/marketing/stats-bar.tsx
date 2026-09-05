@@ -30,7 +30,10 @@ export function StatsBar() {
       <div className="rounded-2xl bg-white/70 dark:bg-zinc-900/70 backdrop-blur-md border border-zinc-200/80 dark:border-zinc-800 p-6 sm:p-8 shadow-xs">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {stats.map((stat, i) => (
-            <div key={i} className="flex flex-col items-center sm:items-start text-center sm:text-left">
+            <div
+              key={i}
+              className="flex flex-col items-center sm:items-start text-center sm:text-left"
+            >
               <div className="flex items-center gap-1.5 text-xs text-zinc-500 dark:text-zinc-400 font-medium mb-1">
                 {stat.icon}
                 <span>{stat.label}</span>

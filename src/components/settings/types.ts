@@ -1,10 +1,5 @@
 export type SettingsTab =
-  | "profile"
-  | "ai_preferences"
-  | "notifications"
-  | "security"
-  | "billing"
-  | "danger";
+  "profile" | "ai_preferences" | "notifications" | "security" | "billing" | "danger";
 
 export interface UserProfileSettings {
   fullName: string;
@@ -69,7 +64,8 @@ export interface BillingDetails {
 export const INITIAL_USER_PROFILE: UserProfileSettings = {
   fullName: "Sarah Jenkins",
   email: "sarah@greenleafbakery.com",
-  avatarUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80",
+  avatarUrl:
+    "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80",
   timezone: "America/New_York (EST)",
   language: "English (US)",
   role: "Workspace Owner & Founder",

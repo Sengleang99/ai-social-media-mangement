@@ -3,13 +3,7 @@
 import * as React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  Sparkles,
-  ArrowUpRight,
-  Copy,
-  Check,
-  Flame,
-} from "lucide-react";
+import { Sparkles, ArrowUpRight, Copy, Check, Flame } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PlatformIcon } from "@/components/ui/social-icons";
 import { cn } from "@/lib/utils";
@@ -22,12 +16,7 @@ interface ContentTableProps {
   copiedId: string | null;
 }
 
-export function ContentTable({
-  items,
-  onRepurpose,
-  onCopy,
-  copiedId,
-}: ContentTableProps) {
+export function ContentTable({ items, onRepurpose, onCopy, copiedId }: ContentTableProps) {
   return (
     <div className="rounded-3xl bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 shadow-sm overflow-hidden">
       <div className="overflow-x-auto">
@@ -64,7 +53,10 @@ export function ContentTable({
                       </div>
                     ) : (
                       <div className="w-10 h-10 rounded-xl bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center shrink-0 border border-zinc-200 dark:border-zinc-700">
-                        <PlatformIcon platform={item.platforms[0]} className="w-4 h-4 text-zinc-500" />
+                        <PlatformIcon
+                          platform={item.platforms[0]}
+                          className="w-4 h-4 text-zinc-500"
+                        />
                       </div>
                     )}
                     <div className="min-w-0">
@@ -73,9 +65,7 @@ export function ContentTable({
                           {item.title}
                         </p>
                       </Link>
-                      <p className="text-[11px] text-zinc-400 truncate mt-0.5">
-                        {item.hook}
-                      </p>
+                      <p className="text-[11px] text-zinc-400 truncate mt-0.5">{item.hook}</p>
                     </div>
                   </div>
                 </td>
@@ -110,10 +100,10 @@ export function ContentTable({
                       item.status === "published"
                         ? "bg-blue-500/10 text-blue-600 dark:text-blue-400"
                         : item.status === "scheduled"
-                        ? "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400"
-                        : item.status === "evergreen"
-                        ? "bg-purple-500/10 text-purple-600 dark:text-purple-400"
-                        : "bg-zinc-100 dark:bg-zinc-800 text-zinc-500"
+                          ? "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400"
+                          : item.status === "evergreen"
+                            ? "bg-purple-500/10 text-purple-600 dark:text-purple-400"
+                            : "bg-zinc-100 dark:bg-zinc-800 text-zinc-500",
                     )}
                   >
                     {item.status}
@@ -129,9 +119,7 @@ export function ContentTable({
                 </td>
 
                 {/* Engagement */}
-                <td className="py-3 px-3 font-mono text-[11px]">
-                  {item.engagementRate}
-                </td>
+                <td className="py-3 px-3 font-mono text-[11px]">{item.engagementRate}</td>
 
                 {/* Actions */}
                 <td className="py-3 px-4 text-right">

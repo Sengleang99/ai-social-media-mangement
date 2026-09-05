@@ -60,8 +60,10 @@ export const INITIAL_BUSINESS_PROFILE: BusinessProfile = {
   address: "142 Main Street, Downtown Arts District",
   operatingHours: "Tue - Sun: 6:30 AM - 4:00 PM (Closed Mondays)",
   foundedYear: 2021,
-  story: "Founded by two passionate bakers obsessed with slow fermentation and locally milled heirloom grains.",
-  idealCustomer: "Neighborhood foodies, quality-conscious coffee lovers, and health-focused sourdough enthusiasts.",
+  story:
+    "Founded by two passionate bakers obsessed with slow fermentation and locally milled heirloom grains.",
+  idealCustomer:
+    "Neighborhood foodies, quality-conscious coffee lovers, and health-focused sourdough enthusiasts.",
 };
 
 export const INITIAL_CONNECTED_ACCOUNTS: ConnectedAccount[] = [
@@ -126,25 +128,29 @@ export const INITIAL_KNOWLEDGE_SNIPPETS: KnowledgeSnippet[] = [
     id: "ks-1",
     category: "product",
     title: "36-Hour Cold Fermentation Method",
-    content: "We never use commercial chemical yeast. Every loaf ferments for 36 hours at 38°F, making our sourdough easily digestible for gluten-sensitive patrons.",
+    content:
+      "We never use commercial chemical yeast. Every loaf ferments for 36 hours at 38°F, making our sourdough easily digestible for gluten-sensitive patrons.",
   },
   {
     id: "ks-2",
     category: "brand_voice",
     title: "Neighborhood Warmth & Craftsmanship",
-    content: "Our voice is warm, educational, authentic, and proud of our 5:00 AM baking craft without sounding corporate or robotic.",
+    content:
+      "Our voice is warm, educational, authentic, and proud of our 5:00 AM baking craft without sounding corporate or robotic.",
   },
   {
     id: "ks-3",
     category: "location",
     title: "Free Customer Parking & Patio",
-    content: "Located right next to the historic town clock tower. Free 2-hour customer parking behind the bakery with outdoor dog-friendly seating.",
+    content:
+      "Located right next to the historic town clock tower. Free 2-hour customer parking behind the bakery with outdoor dog-friendly seating.",
   },
   {
     id: "ks-4",
     category: "faq",
     title: "Weekend Pre-Order Cutoff",
-    content: "Weekend bakery boxes must be reserved on our website by Friday 5:00 PM for Saturday/Sunday morning pickups.",
+    content:
+      "Weekend bakery boxes must be reserved on our website by Friday 5:00 PM for Saturday/Sunday morning pickups.",
   },
 ];
 
@@ -182,7 +188,8 @@ export const INITIAL_REVIEWS: CustomerReview[] = [
     rating: 5,
     date: "Yesterday",
     source: "google",
-    content: "Best cinnamon rolls and sourdough in the state. You can taste the 36-hour fermentation difference. The staff makes you feel like family every morning!",
+    content:
+      "Best cinnamon rolls and sourdough in the state. You can taste the 36-hour fermentation difference. The staff makes you feel like family every morning!",
     sentiment: "positive",
   },
   {
@@ -191,7 +198,8 @@ export const INITIAL_REVIEWS: CustomerReview[] = [
     rating: 5,
     date: "3 days ago",
     source: "yelp",
-    content: "The cold brew paired with the flaky almond croissant is legitimately life-changing. 10/10 recommendation for weekend mornings.",
+    content:
+      "The cold brew paired with the flaky almond croissant is legitimately life-changing. 10/10 recommendation for weekend mornings.",
     sentiment: "positive",
   },
   {
@@ -200,7 +208,8 @@ export const INITIAL_REVIEWS: CustomerReview[] = [
     rating: 5,
     date: "1 week ago",
     source: "google",
-    content: "Ordered a 12-pack bakery box for our office breakfast and everyone was raving about the crunch on the baguettes!",
+    content:
+      "Ordered a 12-pack bakery box for our office breakfast and everyone was raving about the crunch on the baguettes!",
     sentiment: "positive",
   },
 ];

@@ -42,19 +42,14 @@ const REPURPOSE_FORMATS = [
   },
 ];
 
-export function ContentRepurposeModal({
-  item,
-  onClose,
-}: ContentRepurposeModalProps) {
+export function ContentRepurposeModal({ item, onClose }: ContentRepurposeModalProps) {
   const router = useRouter();
   const [selectedFormat, setSelectedFormat] = React.useState("carousel");
 
   if (!item) return null;
 
   const handleProceed = () => {
-    router.push(
-      `/create?repurpose=${encodeURIComponent(item.hook)}&format=${selectedFormat}`
-    );
+    router.push(`/create?repurpose=${encodeURIComponent(item.hook)}&format=${selectedFormat}`);
   };
 
   return (
@@ -91,9 +86,7 @@ export function ContentRepurposeModal({
           <p className="text-xs font-bold text-zinc-900 dark:text-white line-clamp-1">
             {item.title}
           </p>
-          <p className="text-[11px] text-zinc-500 line-clamp-2 leading-tight">
-            {item.hook}
-          </p>
+          <p className="text-[11px] text-zinc-500 line-clamp-2 leading-tight">{item.hook}</p>
         </div>
 
         {/* Format Selection Grid */}
@@ -116,13 +109,13 @@ export function ContentRepurposeModal({
                       : "border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 hover:border-zinc-300 dark:hover:border-zinc-700"
                   }`}
                 >
-                  <div className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 ${fmt.color}`}>
+                  <div
+                    className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 ${fmt.color}`}
+                  >
                     <Icon className="w-4 h-4" />
                   </div>
                   <div className="min-w-0 flex-1">
-                    <p className="text-xs font-bold text-zinc-900 dark:text-white">
-                      {fmt.label}
-                    </p>
+                    <p className="text-xs font-bold text-zinc-900 dark:text-white">{fmt.label}</p>
                     <p className="text-[11px] text-zinc-500 dark:text-zinc-400 line-clamp-1 mt-0.5">
                       {fmt.desc}
                     </p>

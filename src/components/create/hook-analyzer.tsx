@@ -10,11 +10,7 @@ interface HookAnalyzerProps {
   onSwapHook: (newHook: string, score: number) => void;
 }
 
-export function HookAnalyzer({
-  hookScore,
-  alternativeHooks,
-  onSwapHook,
-}: HookAnalyzerProps) {
+export function HookAnalyzer({ hookScore, alternativeHooks, onSwapHook }: HookAnalyzerProps) {
   return (
     <div className="p-4 sm:p-5 rounded-3xl bg-linear-to-br from-emerald-500/10 via-teal-500/5 to-zinc-900/5 dark:from-emerald-950/30 dark:via-zinc-900 dark:to-zinc-900 border border-emerald-500/30 shadow-xs space-y-3">
       <div className="flex items-center justify-between">

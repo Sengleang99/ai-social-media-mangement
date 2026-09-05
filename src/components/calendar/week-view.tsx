@@ -15,18 +15,33 @@ interface WeekViewProps {
 }
 
 const TIME_SLOTS = [
-  { label: "Morning", sublabel: "8 AM - 11 AM", peak: "High commute engagement", badge: "☕ Peak 9:00 AM" },
-  { label: "Midday", sublabel: "12 PM - 3 PM", peak: "Lunch break browsing", badge: "🥪 Peak 12:15 PM" },
-  { label: "Evening", sublabel: "4 PM - 7 PM", peak: "After-work viral peak", badge: "🔥 Peak 4:45 PM" },
-  { label: "Night", sublabel: "8 PM - 11 PM", peak: "Leisure relax feed", badge: "🌙 Peak 8:30 PM" },
+  {
+    label: "Morning",
+    sublabel: "8 AM - 11 AM",
+    peak: "High commute engagement",
+    badge: "☕ Peak 9:00 AM",
+  },
+  {
+    label: "Midday",
+    sublabel: "12 PM - 3 PM",
+    peak: "Lunch break browsing",
+    badge: "🥪 Peak 12:15 PM",
+  },
+  {
+    label: "Evening",
+    sublabel: "4 PM - 7 PM",
+    peak: "After-work viral peak",
+    badge: "🔥 Peak 4:45 PM",
+  },
+  {
+    label: "Night",
+    sublabel: "8 PM - 11 PM",
+    peak: "Leisure relax feed",
+    badge: "🌙 Peak 8:30 PM",
+  },
 ];
 
-export function WeekView({
-  currentDate,
-  posts,
-  onSelectPost,
-  onAddPostOnDate,
-}: WeekViewProps) {
+export function WeekView({ currentDate, posts, onSelectPost, onAddPostOnDate }: WeekViewProps) {
   // Generate 7 days of the current week (Sunday to Saturday)
   const currentDayOfWeek = currentDate.getDay();
   const weekStart = new Date(currentDate);
@@ -62,7 +77,7 @@ export function WeekView({
                 "rounded-2xl border p-3 flex flex-col justify-between transition-all",
                 day.isToday
                   ? "bg-emerald-500/5 dark:bg-emerald-950/20 border-emerald-500/50 ring-1 ring-emerald-500/20"
-                  : "bg-zinc-50/50 dark:bg-zinc-950/50 border-zinc-200/80 dark:border-zinc-800"
+                  : "bg-zinc-50/50 dark:bg-zinc-950/50 border-zinc-200/80 dark:border-zinc-800",
               )}
             >
               {/* Day Header */}
@@ -76,7 +91,7 @@ export function WeekView({
                       "text-base font-extrabold",
                       day.isToday
                         ? "text-emerald-600 dark:text-emerald-400"
-                        : "text-zinc-900 dark:text-white"
+                        : "text-zinc-900 dark:text-white",
                     )}
                   >
                     {day.dayNumber}
@@ -118,9 +133,7 @@ export function WeekView({
                             />
                           ))}
                         </div>
-                        <span className="text-[9px] font-mono text-zinc-500">
-                          {post.time}
-                        </span>
+                        <span className="text-[9px] font-mono text-zinc-500">{post.time}</span>
                       </div>
 
                       {post.imageUrl && (

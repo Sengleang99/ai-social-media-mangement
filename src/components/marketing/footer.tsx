@@ -13,7 +13,9 @@ export function Footer() {
               <SocialHubLogo />
             </Link>
             <p className="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 max-w-sm leading-relaxed">
-              SocialHub is an AI-powered social media management platform built to scale your authentic brand voice, automate publishing, and drive organic reach across all networks.
+              SocialHub is an AI-powered social media management platform built to scale your
+              authentic brand voice, automate publishing, and drive organic reach across all
+              networks.
             </p>
             <div className="flex items-center gap-3 pt-2">
               {[
@@ -58,9 +60,14 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/signup" className="hover:text-emerald-600 transition-colors flex items-center gap-1">
+                <Link
+                  href="/signup"
+                  className="hover:text-emerald-600 transition-colors flex items-center gap-1"
+                >
                   <span>Get Started</span>
-                  <span className="text-[10px] px-1.5 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 font-semibold">Free</span>
+                  <span className="text-[10px] px-1.5 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 font-semibold">
+                    Free
+                  </span>
                 </Link>
               </li>
             </ul>

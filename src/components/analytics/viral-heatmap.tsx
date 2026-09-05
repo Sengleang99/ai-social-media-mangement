@@ -56,9 +56,7 @@ export function ViralHeatmap() {
           {/* Rows */}
           {DAYS.map((day, dIdx) => (
             <div key={dIdx} className="grid grid-cols-9 gap-2 items-center">
-              <div className="text-xs font-bold text-zinc-700 dark:text-zinc-300 pl-1">
-                {day}
-              </div>
+              <div className="text-xs font-bold text-zinc-700 dark:text-zinc-300 pl-1">{day}</div>
 
               {HEATMAP_DATA[dIdx].map((val, hIdx) => {
                 const isSuperPeak = val >= 90;
@@ -72,13 +70,11 @@ export function ViralHeatmap() {
                       isSuperPeak
                         ? "bg-emerald-500 text-white shadow-xs"
                         : isMedium
-                        ? "bg-emerald-500/30 dark:bg-emerald-500/25 text-emerald-900 dark:text-emerald-300"
-                        : "bg-zinc-100 dark:bg-zinc-800/60 text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-800"
+                          ? "bg-emerald-500/30 dark:bg-emerald-500/25 text-emerald-900 dark:text-emerald-300"
+                          : "bg-zinc-100 dark:bg-zinc-800/60 text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-800",
                     )}
                   >
-                    {isSuperPeak && (
-                      <Flame className="w-3 h-3 text-orange-200" />
-                    )}
+                    {isSuperPeak && <Flame className="w-3 h-3 text-orange-200" />}
 
                     {/* Tooltip on hover */}
                     <div className="absolute -top-8 left-1/2 -translate-x-1/2 z-20 px-2 py-1 rounded-md bg-zinc-950 dark:bg-white text-white dark:text-zinc-950 text-[9px] font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-md">

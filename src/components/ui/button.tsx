@@ -2,17 +2,9 @@ import * as React from "react";
 import { Loader2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?:
-  | "primary"
-  | "secondary"
-  | "outline"
-  | "ghost"
-  | "glow"
-  | "destructive"
-  | "link"
-  | "social";
+    "primary" | "secondary" | "outline" | "ghost" | "glow" | "destructive" | "link" | "social";
   size?: "sm" | "md" | "lg" | "xl" | "icon";
   isLoading?: boolean;
   leftIcon?: React.ReactNode;
@@ -34,7 +26,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       disabled,
       ...props
     },
-    ref
+    ref,
   ) => {
     // Base styles
     const baseStyles =
@@ -50,12 +42,10 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         "bg-transparent hover:bg-emerald-50 dark:hover:bg-emerald-950/30 text-emerald-700 dark:text-emerald-400 border border-emerald-300 dark:border-emerald-700 focus-visible:ring-emerald-500",
       ghost:
         "bg-transparent hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-700 dark:text-zinc-300 focus-visible:ring-zinc-400",
-      glow:
-        "bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-600 hover:from-emerald-400 hover:to-teal-500 text-white shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 border border-emerald-400/30 focus-visible:ring-emerald-500",
+      glow: "bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-600 hover:from-emerald-400 hover:to-teal-500 text-white shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 border border-emerald-400/30 focus-visible:ring-emerald-500",
       destructive:
         "bg-rose-600 hover:bg-rose-500 text-white shadow-sm hover:shadow-rose-500/20 focus-visible:ring-rose-500 border border-rose-500/30",
-      link:
-        "bg-transparent text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 hover:underline p-0 h-auto rounded-none focus-visible:ring-0 active:scale-100",
+      link: "bg-transparent text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 hover:underline p-0 h-auto rounded-none focus-visible:ring-0 active:scale-100",
       social:
         "bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 hover:border-emerald-500/50 hover:bg-zinc-50 dark:hover:bg-zinc-800/80 text-zinc-800 dark:text-zinc-100 shadow-sm",
     };
@@ -78,7 +68,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           variantStyles[variant],
           sizeStyles[size],
           isFullWidth ? "w-full" : "",
-          className
+          className,
         )}
         {...props}
       >
@@ -91,7 +81,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {!isLoading && rightIcon && <span className="shrink-0">{rightIcon}</span>}
       </button>
     );
-  }
+  },
 );
 
 Button.displayName = "Button";

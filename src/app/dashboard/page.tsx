@@ -35,13 +35,13 @@ export default function DashboardPage() {
 
   const togglePlatform = (p: string) => {
     setSelectedPlatforms((prev) =>
-      prev.includes(p) ? prev.filter((item) => item !== p) : [...prev, p]
+      prev.includes(p) ? prev.filter((item) => item !== p) : [...prev, p],
     );
   };
 
   const handleApprove = (id: number) => {
     setApprovedPosts((prev) =>
-      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
+      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id],
     );
   };
 
@@ -53,10 +53,22 @@ export default function DashboardPage() {
 
   // 1. Quick Goal Presets for "Create Content"
   const quickGoals = [
-    { label: "🥐 Give me an idea", text: "I want to increase sales this week with a fresh special promotion" },
-    { label: "🎟️ Plan my week", text: "I want to plan 5 engaging posts for my local customers this week" },
-    { label: "🌟 Create promotion", text: "Create a 20% weekend discount offer for our top product" },
-    { label: "📍 Promote a product", text: "Highlight our new seasonal artisanal item with high quality caption and hashtags" },
+    {
+      label: "🥐 Give me an idea",
+      text: "I want to increase sales this week with a fresh special promotion",
+    },
+    {
+      label: "🎟️ Plan my week",
+      text: "I want to plan 5 engaging posts for my local customers this week",
+    },
+    {
+      label: "🌟 Create promotion",
+      text: "Create a 20% weekend discount offer for our top product",
+    },
+    {
+      label: "📍 Promote a product",
+      text: "Highlight our new seasonal artisanal item with high quality caption and hashtags",
+    },
   ];
 
   // 2. AI Recommendation: Ready-made suggestions to 1-Click Approve
@@ -95,7 +107,8 @@ export default function DashboardPage() {
       title: "Secret Menu: Honey Lavender Sourdough Drop",
       time: "Today, 5:00 PM",
       status: "Autopilot Queued",
-      snippet: "Our limited batch Honey Lavender loaf is dropping tomorrow morning at 7 AM. Pre-order link in bio! 🍯🌾",
+      snippet:
+        "Our limited batch Honey Lavender loaf is dropping tomorrow morning at 7 AM. Pre-order link in bio! 🍯🌾",
       format: "Carousel (5 slides)",
     },
     {
@@ -104,7 +117,8 @@ export default function DashboardPage() {
       title: "Behind the Scenes: 5:00 AM Dough Kneading Routine",
       time: "Tomorrow, 8:30 AM",
       status: "Autopilot Queued",
-      snippet: "Ever wondered what 5 AM looks like at a small neighborhood bakery? Watch the crust crunch! 🥖🔊",
+      snippet:
+        "Ever wondered what 5 AM looks like at a small neighborhood bakery? Watch the crust crunch! 🥖🔊",
       format: "Short Reel 9:16",
     },
     {
@@ -113,7 +127,8 @@ export default function DashboardPage() {
       title: "Weekly Baking Tip: How to keep sourdough crust crisp",
       time: "Sunday, 10:00 AM",
       status: "Scheduled",
-      snippet: "Never store artisanal bread in plastic! Here are our head baker's top 3 storage secrets 🥖💡",
+      snippet:
+        "Never store artisanal bread in plastic! Here are our head baker's top 3 storage secrets 🥖💡",
       format: "Tip + Graphic",
     },
   ];
@@ -199,7 +214,8 @@ export default function DashboardPage() {
               GreenLeaf Bakery & Cafe
             </h1>
             <p className="text-zinc-400 text-xs sm:text-sm mt-1 max-w-2xl">
-              Your autonomous AI marketing partner: Plan, create, schedule, and analyze your social growth without needing a marketing expert.
+              Your autonomous AI marketing partner: Plan, create, schedule, and analyze your social
+              growth without needing a marketing expert.
             </p>
           </div>
 
@@ -258,7 +274,9 @@ export default function DashboardPage() {
             <Link
               href={{
                 pathname: "/create",
-                query: promoPrompt ? { prompt: promoPrompt, format: selectedFormat } : { format: selectedFormat },
+                query: promoPrompt
+                  ? { prompt: promoPrompt, format: selectedFormat }
+                  : { format: selectedFormat },
               }}
               className="px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white text-xs font-bold transition-all flex items-center justify-center gap-2 shrink-0 shadow-sm shadow-emerald-500/20"
             >
@@ -297,7 +315,7 @@ export default function DashboardPage() {
                       "flex items-center gap-1.5 px-2.5 py-1 rounded-lg border text-[11px] font-medium transition-all",
                       active
                         ? "bg-emerald-500/10 border-emerald-500/30 text-emerald-700 dark:text-emerald-400 font-semibold"
-                        : "bg-white dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800 text-zinc-400 opacity-60"
+                        : "bg-white dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800 text-zinc-400 opacity-60",
                     )}
                   >
                     <PlatformIcon platform={plat} className="w-3 h-3" />
@@ -321,7 +339,7 @@ export default function DashboardPage() {
                     "px-2.5 py-1 rounded-lg text-[11px] font-medium transition-colors",
                     selectedFormat === fmt.id
                       ? "bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-bold"
-                      : "bg-zinc-200/60 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400"
+                      : "bg-zinc-200/60 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400",
                   )}
                 >
                   {fmt.label}
@@ -372,7 +390,7 @@ export default function DashboardPage() {
                       "p-5 rounded-2xl border transition-all duration-200 space-y-3",
                       isApproved
                         ? "border-emerald-500/60 bg-emerald-500/5 dark:bg-emerald-950/20"
-                        : "border-zinc-200/80 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-950/40 hover:border-zinc-300 dark:hover:border-zinc-700"
+                        : "border-zinc-200/80 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-950/40 hover:border-zinc-300 dark:hover:border-zinc-700",
                     )}
                   >
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
@@ -499,9 +517,7 @@ export default function DashboardPage() {
                       <span className="text-xs font-bold text-emerald-600 dark:text-emerald-400 block">
                         {item.time}
                       </span>
-                      <span className="text-[10px] font-medium text-zinc-400">
-                        {item.status}
-                      </span>
+                      <span className="text-[10px] font-medium text-zinc-400">{item.status}</span>
                     </div>
 
                     <div className="flex items-center gap-1.5">
@@ -541,18 +557,14 @@ export default function DashboardPage() {
             <div className="grid grid-cols-2 gap-2.5">
               <div className="p-3 rounded-2xl bg-zinc-50 dark:bg-zinc-950/60 border border-zinc-100 dark:border-zinc-800">
                 <p className="text-[10px] text-zinc-400">Monthly Local Reach</p>
-                <p className="text-base font-bold text-zinc-900 dark:text-white mt-0.5">
-                  54.2K
-                </p>
+                <p className="text-base font-bold text-zinc-900 dark:text-white mt-0.5">54.2K</p>
                 <span className="text-[10px] font-semibold text-emerald-600 dark:text-emerald-400">
                   +22.8% this month
                 </span>
               </div>
               <div className="p-3 rounded-2xl bg-zinc-50 dark:bg-zinc-950/60 border border-zinc-100 dark:border-zinc-800">
                 <p className="text-[10px] text-zinc-400">Customer Leads / DMs</p>
-                <p className="text-base font-bold text-zinc-900 dark:text-white mt-0.5">
-                  428
-                </p>
+                <p className="text-base font-bold text-zinc-900 dark:text-white mt-0.5">428</p>
                 <span className="text-[10px] font-semibold text-emerald-600 dark:text-emerald-400">
                   +34.5% leads
                 </span>
@@ -611,9 +623,7 @@ export default function DashboardPage() {
                   5. Recent Content & AI Usage
                 </h2>
               </div>
-              <span className="text-[11px] font-semibold text-zinc-400">
-                18.5h saved
-              </span>
+              <span className="text-[11px] font-semibold text-zinc-400">18.5h saved</span>
             </div>
 
             {/* AI Credit Usage Bar */}
@@ -637,7 +647,10 @@ export default function DashboardPage() {
 
               <div className="flex justify-between items-center text-[10px] text-zinc-400 pt-0.5">
                 <span>38 Captions & Graphics Created</span>
-                <Link href="/billing" className="text-emerald-600 dark:text-emerald-400 font-bold hover:underline">
+                <Link
+                  href="/billing"
+                  className="text-emerald-600 dark:text-emerald-400 font-bold hover:underline"
+                >
                   Upgrade Limit
                 </Link>
               </div>

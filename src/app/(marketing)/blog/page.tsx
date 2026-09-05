@@ -2,15 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { 
-  Search, 
-  ArrowRight, 
-  Clock, 
-  Flame, 
-  BookOpen, 
-  CheckCircle2, 
-  Mail
-} from "lucide-react";
+import { Search, ArrowRight, Clock, Flame, BookOpen, CheckCircle2, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CtaBanner } from "@/components/marketing/cta-banner";
 import { cn } from "@/lib/utils";
@@ -39,7 +31,8 @@ const BLOG_POSTS: BlogPost[] = [
     id: "1",
     slug: "instagram-algorithm-2026-breakdown",
     title: "The 2026 Instagram Algorithm Breakdown: Why Saves & DM Shares Beat Likes 10-to-1",
-    excerpt: "We analyzed 2.4 million creator posts to reverse engineer Instagram's latest feed distribution model. Here is the exact scoring formula and how to format your carousels.",
+    excerpt:
+      "We analyzed 2.4 million creator posts to reverse engineer Instagram's latest feed distribution model. Here is the exact scoring formula and how to format your carousels.",
     category: "Algorithm Deep Dives",
     readTime: "6 min read",
     publishedAt: "Aug 18, 2026",
@@ -57,7 +50,8 @@ const BLOG_POSTS: BlogPost[] = [
     id: "2",
     slug: "1-to-5-content-multiplication-system",
     title: "The 1-to-5 Content Multiplexer: How 1 Rough Thought Becomes 5 Native Viral Posts",
-    excerpt: "Stop writing 5 separate social posts each morning. Learn the step-by-step framework to repurpose one insight across TikTok, X, LinkedIn, and YouTube Shorts.",
+    excerpt:
+      "Stop writing 5 separate social posts each morning. Learn the step-by-step framework to repurpose one insight across TikTok, X, LinkedIn, and YouTube Shorts.",
     category: "AI Workflows",
     readTime: "5 min read",
     publishedAt: "Aug 15, 2026",
@@ -74,7 +68,8 @@ const BLOG_POSTS: BlogPost[] = [
     id: "3",
     slug: "human-authenticity-ai-cliche-stripper",
     title: "The AI Cliché Blacklist: 14 Words That Instantly Kill Your Organic Algorithm Reach",
-    excerpt: "Social platforms now detect and down-rank generic AI phrases like 'delve into', 'in today's world', and 'testament to'. Here is how to keep your copy 99.4% authentic.",
+    excerpt:
+      "Social platforms now detect and down-rank generic AI phrases like 'delve into', 'in today's world', and 'testament to'. Here is how to keep your copy 99.4% authentic.",
     category: "Creator Playbooks",
     readTime: "4 min read",
     publishedAt: "Aug 12, 2026",
@@ -90,7 +85,8 @@ const BLOG_POSTS: BlogPost[] = [
     id: "4",
     slug: "case-study-48k-followers-60-days",
     title: "Case Study: How FinFlow Grew 48,000 Followers in 60 Days on Full Autopilot",
-    excerpt: "A transparent look at the analytics, posting schedule, viral hook variants, and conversion metrics of a B2B startup scaling social organically.",
+    excerpt:
+      "A transparent look at the analytics, posting schedule, viral hook variants, and conversion metrics of a B2B startup scaling social organically.",
     category: "Case Studies",
     readTime: "8 min read",
     publishedAt: "Aug 09, 2026",
@@ -106,7 +102,8 @@ const BLOG_POSTS: BlogPost[] = [
     id: "5",
     slug: "peak-hour-scheduling-data-study",
     title: "We Tracked 500,000 Followers for 90 Days: Here Are the Optimal Peak Posting Windows",
-    excerpt: "Posting at 9 AM is outdated advice. Discover how follower timezone clustering and retention heatmaps predict algorithmic velocity per platform.",
+    excerpt:
+      "Posting at 9 AM is outdated advice. Discover how follower timezone clustering and retention heatmaps predict algorithmic velocity per platform.",
     category: "Algorithm Deep Dives",
     readTime: "5 min read",
     publishedAt: "Aug 04, 2026",
@@ -122,7 +119,8 @@ const BLOG_POSTS: BlogPost[] = [
     id: "6",
     slug: "supabase-vector-embeddings-brand-voice",
     title: "Under the Hood: How Supabase pgvector Trains AI on Your Unique Creator Tone",
-    excerpt: "An architectural guide explaining how vector embeddings prevent AI drift and ensure generated captions always match your genuine humor and pacing.",
+    excerpt:
+      "An architectural guide explaining how vector embeddings prevent AI drift and ensure generated captions always match your genuine humor and pacing.",
     category: "AI Workflows",
     readTime: "7 min read",
     publishedAt: "Jul 28, 2026",
@@ -151,8 +149,7 @@ export default function BlogPage() {
   const [subscribed, setSubscribed] = React.useState(false);
 
   const filteredPosts = BLOG_POSTS.filter((post) => {
-    const matchesCategory =
-      activeCategory === "All Articles" || post.category === activeCategory;
+    const matchesCategory = activeCategory === "All Articles" || post.category === activeCategory;
     const matchesSearch =
       post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       post.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -187,7 +184,8 @@ export default function BlogPage() {
         </h1>
 
         <p className="text-sm sm:text-base md:text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto leading-relaxed">
-          Tactical guides, algorithmic reverse-engineering, and AI workflows to scale authentic social reach across all major networks.
+          Tactical guides, algorithmic reverse-engineering, and AI workflows to scale authentic
+          social reach across all major networks.
         </p>
 
         {/* Search Bar */}
@@ -273,7 +271,8 @@ export default function BlogPage() {
             <div className="relative z-10 space-y-2">
               <div className="text-xs font-mono text-zinc-400">Key Metric Discovery:</div>
               <div className="p-3 rounded-xl bg-zinc-950/80 border border-zinc-800 text-xs text-zinc-200">
-                &ldquo;DM shares now trigger 4.2x higher Explore feed impressions than standard feed likes.&rdquo;
+                &ldquo;DM shares now trigger 4.2x higher Explore feed impressions than standard feed
+                likes.&rdquo;
               </div>
             </div>
 
@@ -297,7 +296,7 @@ export default function BlogPage() {
                 "px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-150 whitespace-nowrap cursor-pointer",
                 activeCategory === cat
                   ? "bg-emerald-600 text-white shadow-xs font-bold"
-                  : "bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800"
+                  : "bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800",
               )}
             >
               {cat}
@@ -398,11 +397,15 @@ export default function BlogPage() {
           </h2>
 
           <p className="text-xs sm:text-sm text-emerald-50 max-w-lg mx-auto leading-relaxed">
-            Every Friday morning, we send 1 actionable algorithm breakdown, 3 high-converting viral hooks, and 1 AI social workflow. Zero spam.
+            Every Friday morning, we send 1 actionable algorithm breakdown, 3 high-converting viral
+            hooks, and 1 AI social workflow. Zero spam.
           </p>
 
           {!subscribed ? (
-            <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row items-center justify-center gap-2 max-w-md mx-auto pt-2">
+            <form
+              onSubmit={handleSubscribe}
+              className="flex flex-col sm:flex-row items-center justify-center gap-2 max-w-md mx-auto pt-2"
+            >
               <input
                 type="email"
                 required

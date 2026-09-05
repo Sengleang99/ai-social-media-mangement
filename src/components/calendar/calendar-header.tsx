@@ -71,11 +71,7 @@ export function CalendarHeader({
 
         <div className="flex items-center gap-2.5 self-start sm:self-auto">
           <Link href="/create">
-            <Button
-              variant="primary"
-              size="sm"
-              leftIcon={<Plus className="w-4 h-4" />}
-            >
+            <Button variant="primary" size="sm" leftIcon={<Plus className="w-4 h-4" />}>
               New Post
             </Button>
           </Link>
@@ -86,12 +82,7 @@ export function CalendarHeader({
       <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3 p-3 rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 shadow-xs">
         {/* Date Navigation */}
         <div className="flex items-center gap-2">
-          <Button
-            variant="secondary"
-            size="sm"
-            onClick={onToday}
-            className="text-xs font-semibold"
-          >
+          <Button variant="secondary" size="sm" onClick={onToday} className="text-xs font-semibold">
             Today
           </Button>
 
@@ -131,12 +122,10 @@ export function CalendarHeader({
                     "px-2.5 py-1 rounded-xl text-xs font-medium transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap",
                     active
                       ? "bg-zinc-900 dark:bg-white text-white dark:text-zinc-950 font-bold shadow-xs"
-                      : "text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800"
+                      : "text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800",
                   )}
                 >
-                  {filter.id !== "all" && (
-                    <PlatformIcon platform={filter.id} className="w-3 h-3" />
-                  )}
+                  {filter.id !== "all" && <PlatformIcon platform={filter.id} className="w-3 h-3" />}
                   <span>{filter.label}</span>
                 </button>
               );
@@ -152,7 +141,7 @@ export function CalendarHeader({
                 "p-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all cursor-pointer",
                 viewMode === "month"
                   ? "bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white shadow-xs font-bold"
-                  : "text-zinc-500 hover:text-zinc-900 dark:hover:text-white"
+                  : "text-zinc-500 hover:text-zinc-900 dark:hover:text-white",
               )}
               title="Month View"
             >
@@ -167,7 +156,7 @@ export function CalendarHeader({
                 "p-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all cursor-pointer",
                 viewMode === "week"
                   ? "bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white shadow-xs font-bold"
-                  : "text-zinc-500 hover:text-zinc-900 dark:hover:text-white"
+                  : "text-zinc-500 hover:text-zinc-900 dark:hover:text-white",
               )}
               title="Week View"
             >
@@ -182,7 +171,7 @@ export function CalendarHeader({
                 "p-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all cursor-pointer",
                 viewMode === "queue"
                   ? "bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white shadow-xs font-bold"
-                  : "text-zinc-500 hover:text-zinc-900 dark:hover:text-white"
+                  : "text-zinc-500 hover:text-zinc-900 dark:hover:text-white",
               )}
               title="Queue List View"
             >

@@ -53,9 +53,7 @@ export function ProfileSettings({ profile, onSave }: ProfileSettingsProps) {
           </div>
 
           <div>
-            <h4 className="text-sm font-bold text-zinc-900 dark:text-white">
-              {formData.fullName}
-            </h4>
+            <h4 className="text-sm font-bold text-zinc-900 dark:text-white">{formData.fullName}</h4>
             <p className="text-xs text-zinc-400 font-mono">{formData.role}</p>
             <button
               type="button"
@@ -135,9 +133,7 @@ export function ProfileSettings({ profile, onSave }: ProfileSettingsProps) {
             <p className="text-xs font-bold text-zinc-900 dark:text-white">
               Password & Authentication
             </p>
-            <p className="text-[11px] text-zinc-500">
-              Last updated 3 months ago
-            </p>
+            <p className="text-[11px] text-zinc-500">Last updated 3 months ago</p>
           </div>
           <Button variant="outline" size="sm" type="button">
             Change Password

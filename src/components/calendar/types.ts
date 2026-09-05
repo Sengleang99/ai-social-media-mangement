@@ -26,7 +26,8 @@ export const INITIAL_SCHEDULED_POSTS: ScheduledPost[] = [
     date: "2026-08-28",
     time: "04:45 PM",
     status: "scheduled",
-    imageUrl: "https://images.unsplash.com/photo-1589367920969-ab8e050bbb04?w=800&auto=format&fit=crop&q=80",
+    imageUrl:
+      "https://images.unsplash.com/photo-1589367920969-ab8e050bbb04?w=800&auto=format&fit=crop&q=80",
     hashtags: ["#ArtisanBakery", "#SourdoughLove", "#FreshBakes"],
     isAiGenerated: true,
   },
@@ -39,7 +40,8 @@ export const INITIAL_SCHEDULED_POSTS: ScheduledPost[] = [
     date: "2026-08-29",
     time: "07:30 PM",
     status: "scheduled",
-    imageUrl: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=800&auto=format&fit=crop&q=80",
+    imageUrl:
+      "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=800&auto=format&fit=crop&q=80",
     hashtags: ["#BakeryLife", "#FoodTikTok", "#CroissantCrunch"],
     isAiGenerated: true,
   },
@@ -64,7 +66,8 @@ export const INITIAL_SCHEDULED_POSTS: ScheduledPost[] = [
     date: "2026-08-26",
     time: "09:00 AM",
     status: "published",
-    imageUrl: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&auto=format&fit=crop&q=80",
+    imageUrl:
+      "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&auto=format&fit=crop&q=80",
     hashtags: ["#ColdBrewCoffee", "#SpecialtyCoffee", "#MorningPairing"],
     isAiGenerated: false,
   },

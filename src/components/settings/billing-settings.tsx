@@ -11,9 +11,7 @@ interface BillingSettingsProps {
 }
 
 export function BillingSettingsTab({ billing }: BillingSettingsProps) {
-  const usagePercent = Math.round(
-    (billing.usageCredits.used / billing.usageCredits.total) * 100
-  );
+  const usagePercent = Math.round((billing.usageCredits.used / billing.usageCredits.total) * 100);
 
   return (
     <div className="p-6 sm:p-7 rounded-3xl bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 shadow-xs space-y-6">
@@ -68,7 +66,8 @@ export function BillingSettingsTab({ billing }: BillingSettingsProps) {
             <Sparkles className="w-3.5 h-3.5 text-purple-500" /> Monthly AI Studio Credits
           </span>
           <span className="font-mono text-zinc-500 font-bold">
-            {billing.usageCredits.used.toLocaleString()} / {billing.usageCredits.total.toLocaleString()} credits ({usagePercent}%)
+            {billing.usageCredits.used.toLocaleString()} /{" "}
+            {billing.usageCredits.total.toLocaleString()} credits ({usagePercent}%)
           </span>
         </div>
         <div className="w-full h-2 rounded-full bg-zinc-200 dark:bg-zinc-800 overflow-hidden">
@@ -89,9 +88,7 @@ export function BillingSettingsTab({ billing }: BillingSettingsProps) {
             <p className="text-xs font-bold text-zinc-900 dark:text-white">
               {billing.cardBrand} ending in •••• {billing.cardLast4}
             </p>
-            <p className="text-[11px] text-zinc-400 font-mono">
-              Expires {billing.cardExpiry}
-            </p>
+            <p className="text-[11px] text-zinc-400 font-mono">Expires {billing.cardExpiry}</p>
           </div>
         </div>
 
@@ -115,9 +112,7 @@ export function BillingSettingsTab({ billing }: BillingSettingsProps) {
               <div className="flex items-center gap-3">
                 <CheckCircle2 className="w-4 h-4 text-emerald-500" />
                 <div>
-                  <p className="font-bold text-zinc-900 dark:text-white font-mono">
-                    {inv.id}
-                  </p>
+                  <p className="font-bold text-zinc-900 dark:text-white font-mono">{inv.id}</p>
                   <p className="text-[10px] text-zinc-400">{inv.date}</p>
                 </div>
               </div>

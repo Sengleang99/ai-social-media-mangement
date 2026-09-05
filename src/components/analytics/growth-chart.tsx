@@ -42,7 +42,7 @@ export function GrowthChart({ timeline, onTimelineChange }: GrowthChartProps) {
                   "px-3 py-1 rounded-lg text-xs font-semibold transition-all cursor-pointer",
                   isSelected
                     ? "bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white shadow-xs font-bold"
-                    : "text-zinc-500 hover:text-zinc-900 dark:hover:text-white"
+                    : "text-zinc-500 hover:text-zinc-900 dark:hover:text-white",
                 )}
               >
                 {opt.label}

@@ -45,7 +45,8 @@ export function BusinessKnowledgeBase({
             <span>AI Business Knowledge Base</span>
           </h3>
           <p className="text-xs text-zinc-500 dark:text-zinc-400">
-            Ground the AI engine with your authentic recipes, origin stories, FAQs, and local business facts
+            Ground the AI engine with your authentic recipes, origin stories, FAQs, and local
+            business facts
           </p>
         </div>
 
@@ -140,9 +141,7 @@ export function BusinessKnowledgeBase({
                 </button>
               </div>
 
-              <h4 className="text-xs font-bold text-zinc-900 dark:text-white pt-1">
-                {snip.title}
-              </h4>
+              <h4 className="text-xs font-bold text-zinc-900 dark:text-white pt-1">{snip.title}</h4>
               <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
                 {snip.content}
               </p>

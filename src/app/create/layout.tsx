@@ -4,20 +4,13 @@ import * as React from "react";
 import { Sidebar } from "@/components/dashboard/sidebar";
 import { Topbar } from "@/components/dashboard/topbar";
 
-export default function CreateLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function CreateLayout({ children }: { children: React.ReactNode }) {
   const [mobileSidebarOpen, setMobileSidebarOpen] = React.useState(false);
 
   return (
     <div className="min-h-screen flex bg-zinc-50/50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100">
       {/* Sidebar navigation */}
-      <Sidebar
-        isOpen={mobileSidebarOpen}
-        onClose={() => setMobileSidebarOpen(false)}
-      />
+      <Sidebar isOpen={mobileSidebarOpen} onClose={() => setMobileSidebarOpen(false)} />
 
       {/* Main Content Area */}
       <div className="flex-1 flex flex-col min-w-0">

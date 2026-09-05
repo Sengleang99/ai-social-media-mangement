@@ -1,9 +1,5 @@
 export type VoiceArchetype =
-  | "warm_storyteller"
-  | "high_energy"
-  | "educational_expert"
-  | "luxury_minimal"
-  | "playful_witty";
+  "warm_storyteller" | "high_energy" | "educational_expert" | "luxury_minimal" | "playful_witty";
 
 export interface BrandColor {
   id: string;
@@ -58,7 +54,8 @@ export const INITIAL_BRAND_FONTS: BrandFont[] = [
     role: "body",
     fontFamily: "Inter / Plus Jakarta Sans",
     weights: ["400 Regular", "500 Medium", "600 SemiBold"],
-    previewText: "Our heirloom grains are cold-milled to preserve active sourdough cultures and aromatic nutty crust notes.",
+    previewText:
+      "Our heirloom grains are cold-milled to preserve active sourdough cultures and aromatic nutty crust notes.",
   },
 ];
 
@@ -67,7 +64,8 @@ export const INITIAL_BRAND_ASSETS: BrandAsset[] = [
     id: "ast-1",
     title: "Primary Brand Logo (Light / Green)",
     type: "logo_primary",
-    imageUrl: "https://images.unsplash.com/photo-1589367920969-ab8e050bbb04?w=600&auto=format&fit=crop&q=80",
+    imageUrl:
+      "https://images.unsplash.com/photo-1589367920969-ab8e050bbb04?w=600&auto=format&fit=crop&q=80",
     format: "SVG / Vector",
     dimensions: "1200 x 400 px",
   },
@@ -75,7 +73,8 @@ export const INITIAL_BRAND_ASSETS: BrandAsset[] = [
     id: "ast-2",
     title: "Circular Social Avatar Profile",
     type: "avatar",
-    imageUrl: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&auto=format&fit=crop&q=80",
+    imageUrl:
+      "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&auto=format&fit=crop&q=80",
     format: "PNG (Transparent)",
     dimensions: "512 x 512 px",
   },
@@ -83,7 +82,8 @@ export const INITIAL_BRAND_ASSETS: BrandAsset[] = [
     id: "ast-3",
     title: "Reel Video Corner Watermark Stamp",
     type: "watermark",
-    imageUrl: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&auto=format&fit=crop&q=80",
+    imageUrl:
+      "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&auto=format&fit=crop&q=80",
     format: "PNG (Alpha Stamp)",
     dimensions: "300 x 300 px",
   },
@@ -109,10 +109,5 @@ export const INITIAL_VOICE_DNA: BrandVoiceDNA = {
     "instant bake",
     "discount junk",
   ],
-  defaultHashtags: [
-    "#ArtisanBakery",
-    "#SourdoughLove",
-    "#SpecialtyCoffee",
-    "#NeighborhoodBakes",
-  ],
+  defaultHashtags: ["#ArtisanBakery", "#SourdoughLove", "#SpecialtyCoffee", "#NeighborhoodBakes"],
 };

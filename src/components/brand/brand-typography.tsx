@@ -69,7 +69,8 @@ export function BrandTypography({ fonts }: BrandTypographyProps) {
         <div className="flex items-center gap-2">
           <Sparkles className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
           <span className="text-zinc-800 dark:text-zinc-200">
-            Selected Visual Theme: <strong>Artisan Modern Organic</strong> (warm grain, rich typography, rounded 24px cards).
+            Selected Visual Theme: <strong>Artisan Modern Organic</strong> (warm grain, rich
+            typography, rounded 24px cards).
           </span>
         </div>
       </div>

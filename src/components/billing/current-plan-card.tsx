@@ -32,7 +32,8 @@ export function CurrentPlanCard({
             $49<span className="text-sm font-normal text-zinc-500">/month</span>
           </h2>
           <p className="text-xs text-zinc-600 dark:text-zinc-400">
-            Next renewal on <strong>September 28, 2026</strong> via Visa ending in <strong>4242</strong>
+            Next renewal on <strong>September 28, 2026</strong> via Visa ending in{" "}
+            <strong>4242</strong>
           </p>
         </div>
 

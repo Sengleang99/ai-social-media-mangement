@@ -10,10 +10,7 @@ interface CreditUsageBreakdownProps {
   onTopUpCredits: () => void;
 }
 
-export function CreditUsageBreakdown({
-  usageItems,
-  onTopUpCredits,
-}: CreditUsageBreakdownProps) {
+export function CreditUsageBreakdown({ usageItems, onTopUpCredits }: CreditUsageBreakdownProps) {
   return (
     <div className="p-6 sm:p-7 rounded-3xl bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 shadow-xs space-y-5">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-zinc-100 dark:border-zinc-800">
@@ -47,9 +44,7 @@ export function CreditUsageBreakdown({
               className="p-4 rounded-2xl bg-zinc-50 dark:bg-zinc-950/60 border border-zinc-200/80 dark:border-zinc-800 space-y-2.5"
             >
               <div className="flex items-center justify-between text-xs">
-                <span className="font-bold text-zinc-900 dark:text-white">
-                  {item.name}
-                </span>
+                <span className="font-bold text-zinc-900 dark:text-white">{item.name}</span>
                 <span className="font-mono text-zinc-500 font-bold">
                   {item.used.toLocaleString()} / {item.total.toLocaleString()} {item.unit}
                 </span>

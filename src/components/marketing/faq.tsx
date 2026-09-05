@@ -51,7 +51,10 @@ export function FaqSection() {
   };
 
   return (
-    <section id="faq" className="w-full py-16 sm:py-24 px-4 sm:px-6 relative overflow-hidden bg-white/40 dark:bg-zinc-950/40">
+    <section
+      id="faq"
+      className="w-full py-16 sm:py-24 px-4 sm:px-6 relative overflow-hidden bg-white/40 dark:bg-zinc-950/40"
+    >
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto space-y-3 mb-12">
@@ -59,7 +62,8 @@ export function FaqSection() {
             Frequently Asked Questions
           </h2>
           <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed">
-            Welcome to our Social Hub! We&apos;ve compiled a list of frequently asked questions to help you navigate our platform and make the most of your experience.
+            Welcome to our Social Hub! We&apos;ve compiled a list of frequently asked questions to
+            help you navigate our platform and make the most of your experience.
           </p>
         </div>
 
@@ -75,7 +79,7 @@ export function FaqSection() {
                   "rounded-2xl transition-all duration-300 overflow-hidden",
                   isOpen
                     ? "bg-white dark:bg-zinc-900 border-2 border-emerald-400/90 dark:border-emerald-500 shadow-sm"
-                    : "bg-white/90 dark:bg-zinc-900/70 border border-zinc-200/80 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 shadow-xs"
+                    : "bg-white/90 dark:bg-zinc-900/70 border border-zinc-200/80 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 shadow-xs",
                 )}
               >
                 <button
@@ -92,7 +96,7 @@ export function FaqSection() {
                       "w-9 h-9 rounded-full flex items-center justify-center shrink-0 transition-all duration-300",
                       isOpen
                         ? "bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400 rotate-180"
-                        : "bg-zinc-100 dark:bg-zinc-800 text-zinc-500 dark:text-zinc-400"
+                        : "bg-zinc-100 dark:bg-zinc-800 text-zinc-500 dark:text-zinc-400",
                     )}
                   >
                     <ChevronDown className="w-5 h-5 stroke-[2.2]" />

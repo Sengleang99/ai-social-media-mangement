@@ -24,7 +24,7 @@ const SOLUTIONS: SolutionItem[] = [
       "Quickly understand your social media needs, audience, and goals. Analyze your content for improvement and optimization.",
     imageSrc: "/images/onboarding_social_tree.jpg",
     actionText: "Read More >",
-    actionHref: "/onboarding",
+    actionHref: "/dashboard",
   },
   {
     id: 2,
@@ -34,7 +34,7 @@ const SOLUTIONS: SolutionItem[] = [
       "Easily create engaging content for your audience. Choose templates or create your own. AI optimization ensures high-performing content.",
     imageSrc: "/images/onboarding_social_tree.jpg",
     actionText: "Read More >",
-    actionHref: "/onboarding",
+    actionHref: "/create",
   },
   {
     id: 3,
@@ -44,7 +44,7 @@ const SOLUTIONS: SolutionItem[] = [
       "Effortlessly plan and schedule content across all channels. Get insights to improve social media AI performance.",
     imageSrc: "/images/onboarding_social_tree.jpg",
     actionText: "Read More >",
-    actionHref: "/onboarding",
+    actionHref: "/calendar",
   },
 ];
 
@@ -64,7 +64,8 @@ export function HowItWorksSection() {
             How SocialHub Works.
           </h2>
           <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed">
-            Upgrade Your Social Media Management with AI in 3 simple steps. Enter the Playground and effortlessly generate engaging, impactful content using SocialHub advanced
+            Upgrade Your Social Media Management with AI in 3 simple steps. Enter the Playground and
+            effortlessly generate engaging, impactful content using SocialHub advanced
           </p>
         </div>
 
@@ -117,7 +118,7 @@ export function HowItWorksSection() {
               "p-6 rounded-2xl border transition-all duration-200 cursor-pointer flex flex-col justify-between",
               activeSolutionId === 2
                 ? "bg-white dark:bg-zinc-900 border-emerald-500 shadow-sm ring-1 ring-emerald-500/30"
-                : "bg-white/90 dark:bg-zinc-900/60 border-zinc-200/80 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700"
+                : "bg-white/90 dark:bg-zinc-900/60 border-zinc-200/80 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700",
             )}
           >
             <div>
@@ -135,7 +136,8 @@ export function HowItWorksSection() {
                 </span>
               </div>
               <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                Easily create engaging content for your audience. Choose templates or create your own. AI optimization ensures high-performing content.
+                Easily create engaging content for your audience. Choose templates or create your
+                own. AI optimization ensures high-performing content.
               </p>
             </div>
           </div>
@@ -147,7 +149,7 @@ export function HowItWorksSection() {
               "p-6 rounded-2xl border transition-all duration-200 cursor-pointer flex flex-col justify-between",
               activeSolutionId === 3
                 ? "bg-white dark:bg-zinc-900 border-emerald-500 shadow-sm ring-1 ring-emerald-500/30"
-                : "bg-white/90 dark:bg-zinc-900/60 border-zinc-200/80 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700"
+                : "bg-white/90 dark:bg-zinc-900/60 border-zinc-200/80 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700",
             )}
           >
             <div>
@@ -156,16 +158,15 @@ export function HowItWorksSection() {
                   <span className="text-2xl font-extrabold text-zinc-300 dark:text-zinc-600 font-mono">
                     03
                   </span>
-                  <h4 className="text-base font-bold text-zinc-900 dark:text-white">
-                    Scheduling
-                  </h4>
+                  <h4 className="text-base font-bold text-zinc-900 dark:text-white">Scheduling</h4>
                 </div>
                 <span className="text-xs font-semibold text-emerald-600 dark:text-emerald-400 hover:underline">
                   Read More...
                 </span>
               </div>
               <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                Effortlessly plan and schedule the content across all channels. Get insights to improve social media AI performance.
+                Effortlessly plan and schedule the content across all channels. Get insights to
+                improve social media AI performance.
               </p>
             </div>
           </div>

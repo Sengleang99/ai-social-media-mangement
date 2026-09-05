@@ -10,10 +10,7 @@ interface TeamManagementProps {
   onInviteMember: (email: string, role: TeamMember["role"]) => void;
 }
 
-export function TeamManagement({
-  members,
-  onInviteMember,
-}: TeamManagementProps) {
+export function TeamManagement({ members, onInviteMember }: TeamManagementProps) {
   const [showInviteModal, setShowInviteModal] = React.useState(false);
   const [inviteEmail, setInviteEmail] = React.useState("");
   const [inviteRole, setInviteRole] = React.useState<TeamMember["role"]>("Creator");
@@ -125,9 +122,7 @@ export function TeamManagement({
                   <ShieldCheck className="w-3 h-3 text-emerald-500 shrink-0" />
                 )}
               </div>
-              <p className="text-[10px] text-zinc-400 truncate">
-                {member.email}
-              </p>
+              <p className="text-[10px] text-zinc-400 truncate">{member.email}</p>
               <span className="inline-block text-[10px] font-semibold text-emerald-700 dark:text-emerald-300 mt-1">
                 {member.role}
               </span>

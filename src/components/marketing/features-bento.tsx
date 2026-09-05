@@ -1,10 +1,4 @@
-import { 
-  Repeat, 
-  Clock, 
-  BarChart3, 
-  CheckCircle,
-  BrainCircuit
-} from "lucide-react";
+import { Repeat, Clock, BarChart3, CheckCircle, BrainCircuit } from "lucide-react";
 
 export function FeaturesBento() {
   return (
@@ -19,7 +13,9 @@ export function FeaturesBento() {
             Built for Real Creators, Not Spambots.
           </h2>
           <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed">
-            Generic AI tools generate robotic filler that hurts your algorithm reach. SocialAI is engineered from the ground up for human voice, high engagement, and multi-channel consistency.
+            Generic AI tools generate robotic filler that hurts your algorithm reach. SocialAI is
+            engineered from the ground up for human voice, high engagement, and multi-channel
+            consistency.
           </p>
         </div>
 
@@ -35,7 +31,9 @@ export function FeaturesBento() {
                 Human Authenticity Engine (99.4% Index)
               </h3>
               <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                Our model specifically strips away cringe clichés (&ldquo;Delve into&rdquo;, &ldquo;In today&apos;s fast-paced world&rdquo;) and structures posts with real hooks, storytelling cadence, and actionable substance.
+                Our model specifically strips away cringe clichés (&ldquo;Delve into&rdquo;,
+                &ldquo;In today&apos;s fast-paced world&rdquo;) and structures posts with real
+                hooks, storytelling cadence, and actionable substance.
               </p>
             </div>
 
@@ -62,7 +60,8 @@ export function FeaturesBento() {
                 Peak Viral Auto-Timing
               </h3>
               <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                AI continuously analyzes when your exact followers on Instagram, TikTok, and X are most active to publish right at the algorithmic peak.
+                AI continuously analyzes when your exact followers on Instagram, TikTok, and X are
+                most active to publish right at the algorithmic peak.
               </p>
             </div>
 
@@ -82,13 +81,12 @@ export function FeaturesBento() {
                 1-Idea to 5-Channels
               </h3>
               <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                Turn a single thought into an Instagram carousel, TikTok video script, X thread, Facebook post, and YouTube Short in 10 seconds.
+                Turn a single thought into an Instagram carousel, TikTok video script, X thread,
+                Facebook post, and YouTube Short in 10 seconds.
               </p>
             </div>
 
-            <div className="mt-6 text-xs text-zinc-400 font-mono">
-              5 platforms simultaneously
-            </div>
+            <div className="mt-6 text-xs text-zinc-400 font-mono">5 platforms simultaneously</div>
           </div>
 
           {/* Bento Card 4 */}
@@ -101,7 +99,8 @@ export function FeaturesBento() {
                 Multi-Channel Visual Calendar & Heatmaps
               </h3>
               <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                Drag-and-drop your weekly pipeline, preview exactly how posts will look live on mobile feeds, and let the AI auto-fill gaps with evergreen high-performing content.
+                Drag-and-drop your weekly pipeline, preview exactly how posts will look live on
+                mobile feeds, and let the AI auto-fill gaps with evergreen high-performing content.
               </p>
             </div>
 

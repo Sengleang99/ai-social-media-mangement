@@ -1,0 +1,12 @@
+node_modules
+.next
+out
+build
+next-env.d.ts
+package-lock.json
+pnpm-lock.yaml
+.DS_Store
+*.json
+*.jsonl
+*.md
+.agents
